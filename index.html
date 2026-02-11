@@ -2,77 +2,51 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
     <meta name="description" content="Buku Saku Partonggoan Parjumatanganan GKPS">
     <meta name="theme-color" content="#6366f1">
     <title>📖 Buku Saku GKPS - Partonggoan Parjumatanganan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== FIX SCROLLING ISSUE ===== */
-        html, body {
-            overscroll-behavior-y: contain !important;
-            -webkit-overflow-scrolling: touch !important;
-            touch-action: pan-y !important;
-            height: 100% !important;
-            overflow-x: hidden !important;
-        }
-        
-        body {
-            position: relative !important;
-            min-height: 100vh !important;
+        /* ===== FIX SCROLLING - CRITICAL CSS ===== */
+        html {
             scroll-behavior: smooth !important;
+            -webkit-text-size-adjust: 100% !important;
         }
         
-        /* ===== GLOBAL STYLES ===== */
-        :root {
-            --primary-500: #6366f1;
-            --primary-600: #4f46e5;
-            --secondary-500: #f59e0b;
-            --accent-1: #10b981;
-            --accent-2: #8b5cf6;
-            --white: #ffffff;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --rounded-xl: 20px;
-            --rounded-full: 9999px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
-            color: var(--gray-800);
+            color: #1f2937;
             background: linear-gradient(135deg, #f0f4ff 0%, #e6e9ff 100%);
-            padding-top: 20px;
+            margin: 0;
+            padding: 20px 0 40px 0;
+            min-height: 100vh !important;
+            height: auto !important;
+            overflow-x: hidden !important;
+            overflow-y: visible !important;
+            position: relative !important;
+            -webkit-overflow-scrolling: touch !important;
+            touch-action: pan-y !important;
         }
-
+        
         /* ===== INSTALL BANNER ===== */
         .install-banner {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
-            padding: 1.2rem;
+            padding: 1rem;
             margin: 1rem;
-            border-radius: var(--rounded-xl);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            position: sticky;
+            top: 10px;
+            z-index: 1000;
         }
 
         .install-banner h3 {
             margin-bottom: 8px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -81,10 +55,10 @@
 
         .install-btn {
             background: white;
-            color: var(--primary-600);
+            color: #4f46e5;
             border: none;
             padding: 10px 24px;
-            border-radius: var(--rounded-full);
+            border-radius: 50px;
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
@@ -93,7 +67,7 @@
             gap: 6px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             margin-top: 8px;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
 
         .install-btn:hover {
@@ -140,13 +114,111 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* ===== IMPORTANT NOTICE ===== */
+        .important-notice {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 5px solid #3b82f6;
+            padding: 1.2rem;
+            margin: 1rem;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+
+        .important-notice h4 {
+            color: #1e40af;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+        }
+
+        /* ===== PLATFORM GUIDE ===== */
+        .platform-guide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #6366f1;
+        }
+
+        .platform-card.android {
+            border-top-color: #1e40af;
+        }
+
+        .platform-card.iphone {
+            border-top-color: #0ea5e9;
+        }
+
+        .platform-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .platform-card.iphone .platform-badge {
+            background: #dbeafe;
+            color: #0ea5e9;
+        }
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            background: #6366f1;
+            color: white;
+            min-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .platform-card.iphone .step-number {
+            background: #0ea5e9;
+        }
+
+        .step-check {
+            background: #10b981 !important;
+        }
+
         /* ===== NAVIGATION ===== */
         .nav-container {
             background: white;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 999;
             margin-bottom: 1.5rem;
         }
 
@@ -156,6 +228,7 @@
             gap: 6px;
             padding: 10px;
             scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .nav-tabs::-webkit-scrollbar {
@@ -170,15 +243,15 @@
             cursor: pointer;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             white-space: nowrap;
-            min-width: 120px;
+            min-width: 110px;
             color: #4338ca;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .nav-btn:hover, .nav-btn.active {
-            background: var(--primary-500);
+            background: #6366f1;
             color: white;
             transform: translateY(-1px);
             box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
@@ -193,16 +266,12 @@
 
         .content-section {
             background: white;
-            border-radius: var(--rounded-xl);
-            box-shadow: var(--shadow-lg);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             padding: 1.8rem;
             margin-bottom: 2rem;
             display: none;
             position: relative;
-        }
-
-        .content-section.active {
-            display: block;
             animation: fadeIn 0.4s ease;
         }
 
@@ -211,8 +280,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .content-section.active {
+            display: block !important;
+        }
+
         .section-title {
-            color: var(--primary-600);
+            color: #4f46e5;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.8rem;
@@ -230,7 +303,7 @@
             left: 0;
             width: 60px;
             height: 4px;
-            background: var(--primary-500);
+            background: #6366f1;
             border-radius: 2px;
         }
 
@@ -239,8 +312,8 @@
             padding: 1.3rem;
             background: #f8fafc;
             border-radius: 16px;
-            border-left: 4px solid var(--primary-500);
-            box-shadow: var(--shadow-sm);
+            border-left: 4px solid #6366f1;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
 
         .subsection-title {
@@ -274,13 +347,13 @@
             left: 10px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--accent-1);
+            color: #10b981;
             font-weight: bold;
             font-size: 1rem;
         }
 
         .subsection-content ol {
-            padding-left: 1.8rem;
+            padding-left: 2rem;
             margin: 1rem 0;
             font-size: 0.95rem;
         }
@@ -298,7 +371,6 @@
             margin: 1.8rem 0;
             text-align: center;
             border: 2px solid #f59e0b;
-            position: relative;
         }
 
         .bible-verse::before {
@@ -324,15 +396,15 @@
         .card {
             background: white;
             border-radius: 16px;
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             padding: 1.6rem;
             margin-bottom: 1.5rem;
-            border-left: 5px solid var(--accent-2);
+            border-left: 5px solid #8b5cf6;
         }
 
         .card-title {
             font-weight: 700;
-            color: var(--accent-2);
+            color: #8b5cf6;
             margin-bottom: 0.8rem;
             font-size: 1.15rem;
             display: flex;
@@ -343,14 +415,14 @@
         /* ===== FORM STYLES ===== */
         .form-section {
             background: white;
-            border-radius: var(--rounded-xl);
-            box-shadow: var(--shadow-lg);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             padding: 2rem;
             margin-top: 1.5rem;
         }
 
         .form-title {
-            color: var(--primary-600);
+            color: #4f46e5;
             font-size: 1.7rem;
             margin-bottom: 1.8rem;
             text-align: center;
@@ -366,7 +438,7 @@
             transform: translateX(-50%);
             width: 70px;
             height: 3px;
-            background: var(--primary-500);
+            background: #6366f1;
             border-radius: 2px;
         }
 
@@ -378,7 +450,7 @@
             display: block;
             margin-bottom: 0.7rem;
             font-weight: 600;
-            color: var(--gray-800);
+            color: #1f2937;
             font-size: 0.95rem;
             display: flex;
             align-items: center;
@@ -391,13 +463,13 @@
             border: 2px solid #d1d5db;
             border-radius: 12px;
             font-size: 1rem;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             font-family: inherit;
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--primary-500);
+            border-color: #6366f1;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
             background: #f9fafb;
         }
@@ -424,18 +496,18 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: var(--transition);
+            transition: all 0.3s ease;
             border: none;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .btn-primary {
-            background: var(--primary-500);
+            background: #6366f1;
             color: white;
         }
 
         .btn-primary:hover {
-            background: var(--primary-600);
+            background: #4f46e5;
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
         }
@@ -497,112 +569,7 @@
             padding: 2px 7px;
             border-radius: 6px;
             font-weight: 700;
-            color: var(--accent-2);
-        }
-
-        /* ===== IMPORTANT NOTICE ===== */
-        .important-notice {
-            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-            border-left: 5px solid #3b82f6;
-            padding: 1.4rem;
-            margin: 1.5rem;
-            border-radius: 0 12px 12px 0;
-            position: relative;
-        }
-
-        .important-notice::before {
-            content: '❗';
-            position: absolute;
-            left: -15px;
-            top: -15px;
-            font-size: 2.5rem;
-            opacity: 0.2;
-        }
-
-        .important-notice h4 {
-            color: #1e40af;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-        }
-
-        /* ===== PLATFORM GUIDE ===== */
-        .platform-guide {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .platform-card {
-            background: white;
-            border-radius: 16px;
-            padding: 1.6rem;
-            box-shadow: var(--shadow-md);
-            border-top: 4px solid #6366f1;
-        }
-
-        .platform-card.android {
-            border-top-color: #1e40af;
-        }
-
-        .platform-card.iphone {
-            border-top-color: #0ea5e9;
-        }
-
-        .platform-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-            width: fit-content;
-        }
-
-        .platform-card.iphone .platform-badge {
-            background: #dbeafe;
-            color: #0ea5e9;
-        }
-
-        .step-list {
-            list-style: none;
-        }
-
-        .step-item {
-            display: flex;
-            gap: 10px;
-            padding: 10px 0;
-            border-bottom: 1px dashed #e2e8f0;
-        }
-
-        .step-item:last-child {
-            border-bottom: none;
-        }
-
-        .step-number {
-            background: #6366f1;
-            color: white;
-            min-width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.85rem;
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-
-        .platform-card.iphone .step-number {
-            background: #0ea5e9;
-        }
-
-        .step-check {
-            background: #10b981 !important;
+            color: #8b5cf6;
         }
 
         /* ===== RESPONSIVE STYLES ===== */
@@ -632,6 +599,10 @@
             }
             .form-title {
                 font-size: 1.5rem;
+            }
+            .platform-guide {
+                grid-template-columns: 1fr;
+                margin: 1rem;
             }
         }
 
@@ -677,7 +648,7 @@
             }
             body {
                 background: white;
-                padding-top: 0;
+                padding: 0;
             }
             .content-section {
                 display: block !important;
@@ -694,7 +665,7 @@
 <body>
     <!-- Install Banner -->
     <div class="install-banner">
-        <h3><i class="fas fa-mobile-alt"></i> Cara Install ke HP</h3>
+        <h3><i class="fas fa-mobile-alt"></i> Cara Menambahkan ke HP</h3>
         <button class="install-btn" onclick="showInstallGuide()">
             <i class="fas fa-info-circle"></i> Lihat Panduan
         </button>
@@ -712,72 +683,70 @@
 
     <!-- Important Notice -->
     <div class="important-notice">
-        <h4>⚠️ Penting untuk Pengguna HP</h4>
-        <p><strong>File ini tidak bisa di-install otomatis</strong> karena dibuka dari file lokal (file://).</p>
-        <p>✅ <strong>Solusi:</strong> Ikuti panduan "Tambah ke Layar Utama" di bawah untuk membuat shortcut di HP Anda.</p>
-        <p>💡 <strong>Tips:</strong> Untuk pengalaman terbaik, upload file ke Google Drive dan buka via link (lihat panduan lengkap di bawah).</p>
+        <h4>⚠️ Informasi Penting</h4>
+        <p><strong>File ini tidak bisa di-install otomatis</strong> karena dibuka dari file lokal.</p>
+        <p>✅ <strong>Solusi:</strong> Gunakan tombol di atas untuk melihat panduan "Tambah ke Layar Utama".</p>
+        <p>📱 <strong>Setelah ditambahkan ke home screen, aplikasi bisa dibuka OFFLINE!</strong></p>
     </div>
 
     <!-- Platform Guide -->
-    <div class="container">
-        <div class="platform-guide">
-            <!-- Android Card -->
-            <div class="platform-card android">
-                <div class="platform-badge">
-                    <i class="fab fa-android"></i> ANDROID (Chrome)
-                </div>
-                <ul class="step-list">
-                    <li class="step-item">
-                        <div class="step-number">1</div>
-                        <div>Buka file ini di <strong>Chrome</strong></div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">2</div>
-                        <div>Klik <strong>⋮ (titik tiga)</strong> di pojok kanan atas</div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">3</div>
-                        <div>Pilih <strong>"Tambahkan ke Layar utama"</strong></div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">4</div>
-                        <div>Beri nama: <strong>"Buku Saku GKPS"</strong></div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number step-check">✓</div>
-                        <div><strong>Selesai!</strong> Buka dari home screen HP Anda</div>
-                    </li>
-                </ul>
+    <div class="platform-guide">
+        <!-- Android Card -->
+        <div class="platform-card android">
+            <div class="platform-badge">
+                <i class="fab fa-android"></i> ANDROID (Chrome)
             </div>
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-number">1</div>
+                    <div>Buka file ini di <strong>Chrome</strong></div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">2</div>
+                    <div>Klik <strong>⋮</strong> di pojok kanan atas</div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">3</div>
+                    <div>Pilih <strong>"Tambahkan ke Layar utama"</strong></div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">4</div>
+                    <div>Beri nama: <strong>"Buku Saku GKPS"</strong></div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number step-check">✓</div>
+                    <div><strong>Selesai!</strong> Buka dari home screen</div>
+                </li>
+            </ul>
+        </div>
 
-            <!-- iPhone Card -->
-            <div class="platform-card iphone">
-                <div class="platform-badge">
-                    <i class="fab fa-apple"></i> IPHONE (Safari)
-                </div>
-                <ul class="step-list">
-                    <li class="step-item">
-                        <div class="step-number">1</div>
-                        <div>Buka file ini di <strong>Safari</strong></div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">2</div>
-                        <div>Klik tombol <strong>📤 Share</strong> di bawah</div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">3</div>
-                        <div>Scroll cari <strong>"Tambah ke Layar Utama"</strong></div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">4</div>
-                        <div>Beri nama: <strong>"Buku Saku GKPS"</strong></div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number step-check">✓</div>
-                        <div><strong>Selesai!</strong> Buka dari home screen iPhone Anda</div>
-                    </li>
-                </ul>
+        <!-- iPhone Card -->
+        <div class="platform-card iphone">
+            <div class="platform-badge">
+                <i class="fab fa-apple"></i> IPHONE (Safari)
             </div>
+            <ul class="step-list">
+                <li class="step-item">
+                    <div class="step-number">1</div>
+                    <div>Buka file ini di <strong>Safari</strong></div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">2</div>
+                    <div>Klik tombol <strong>📤 Share</strong></div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">3</div>
+                    <div>Pilih <strong>"Tambah ke Layar Utama"</strong></div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number">4</div>
+                    <div>Beri nama: <strong>"Buku Saku GKPS"</strong></div>
+                </li>
+                <li class="step-item">
+                    <div class="step-number step-check">✓</div>
+                    <div><strong>Selesai!</strong> Buka dari home screen</div>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -1272,15 +1241,14 @@ Kel. Bp. Siparayakon Sihite"></textarea>
     </footer>
 
     <script>
-        // FIX SCROLLING ISSUE - Remove problematic touch handlers
+        // Navigation functionality - FIXED FOR SCROLLING
         document.addEventListener('DOMContentLoaded', function() {
-            // Navigation functionality
             const navButtons = document.querySelectorAll('.nav-btn');
             const sections = document.querySelectorAll('.content-section');
             
             navButtons.forEach((button, index) => {
                 button.addEventListener('click', function(e) {
-                    e.preventDefault(); // Prevent default but don't stop propagation
+                    e.preventDefault();
                     
                     // Remove active class from all buttons and sections
                     navButtons.forEach(btn => btn.classList.remove('active'));
@@ -1293,13 +1261,13 @@ Kel. Bp. Siparayakon Sihite"></textarea>
                     const sectionId = this.getAttribute('data-section');
                     document.getElementById(sectionId).classList.add('active');
                     
-                    // Scroll to top smoothly - FIX: Use requestAnimationFrame for mobile stability
-                    requestAnimationFrame(() => {
+                    // Scroll to top smoothly - FIXED VERSION
+                    setTimeout(() => {
                         window.scrollTo({
                             top: 0,
                             behavior: 'smooth'
                         });
-                    });
+                    }, 10);
                 });
             });
             
@@ -1360,11 +1328,7 @@ Kel. Bp. Siparayakon Sihite"></textarea>
             printContainer.appendChild(printBtn);
             header.appendChild(printContainer);
             
-            // CRITICAL FIX: Remove touch handlers that cause scroll jump
-            // These were causing the page to jump back to top on mobile
-            // We'll keep only essential touch handling
-            
-            // Show install guide
+            // CRITICAL FIX: Show install guide
             window.showInstallGuide = function() {
                 const guide = `
 📱 CARA MENAMBAHKAN KE LAYAR UTAMA HP:
@@ -1387,40 +1351,18 @@ IPHONE (Safari):
 
 💡 TIPS PENTING:
 • File lokal TIDAK BISA di-install otomatis
-• Untuk pengalaman terbaik: 
-  1. Upload file ke Google Drive
-  2. Klik kanan file → "Dapatkan link"
-  3. Set "Siapa saja yang memiliki link"
-  4. Buka link di HP → ikuti langkah di atas
+• Ini adalah batasan keamanan browser
 • Setelah ditambahkan ke home screen, 
   aplikasi bisa dibuka OFFLINE!
+• Untuk pengalaman terbaik:
+  1. Upload file ke Google Drive
+  2. Klik kanan → "Dapatkan link"
+  3. Set "Siapa saja yang memiliki link"
+  4. Buka link di HP
 `;
                 alert(guide);
             };
-            
-            // Prevent pull-to-refresh that causes scroll jump on mobile
-            let touchStartY = 0;
-            document.addEventListener('touchstart', function(e) {
-                touchStartY = e.touches[0].clientY;
-            }, { passive: true });
-            
-            document.addEventListener('touchmove', function(e) {
-                const touchY = e.touches[0].clientY;
-                const touchDiff = touchY - touchStartY;
-                
-                // Only prevent default if scrolling up at the very top
-                if (window.scrollY === 0 && touchDiff > 0) {
-                    e.preventDefault();
-                }
-            }, { passive: false });
         });
-        
-        // CRITICAL: Disable overscroll bounce on iOS that causes jump
-        document.body.addEventListener('touchmove', function(e) {
-            if (document.body.scrollHeight === document.body.clientHeight) {
-                e.preventDefault();
-            }
-        }, { passive: false });
     </script>
 </body>
 </html>

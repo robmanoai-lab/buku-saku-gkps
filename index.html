@@ -2,89 +2,45 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Buku Saku Partonggoan Parjumatanganan GKPS - Panduan Lengkap Pelayanan Jumatanganan">
-    <meta name="keywords" content="GKPS, Buku Saku, Parjumatanganan, Sintua, Pelayanan">
-    <meta name="author" content="GKPS">
-    <meta name="theme-color" content="#667eea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Buku Saku Partonggoan Parjumatanganan GKPS">
+    <meta name="theme-color" content="#6366f1">
     <title>📖 Buku Saku GKPS - Partonggoan Parjumatanganan</title>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
+        /* ===== FIX SCROLLING ISSUE ===== */
+        html, body {
+            overscroll-behavior-y: contain !important;
+            -webkit-overflow-scrolling: touch !important;
+            touch-action: pan-y !important;
+            height: 100% !important;
+            overflow-x: hidden !important;
+        }
+        
+        body {
+            position: relative !important;
+            min-height: 100vh !important;
+            scroll-behavior: smooth !important;
+        }
+        
         /* ===== GLOBAL STYLES ===== */
         :root {
-            /* Primary Color Palette - Vibrant & Modern */
-            --primary-50: #eef2ff;
-            --primary-100: #e0e7ff;
-            --primary-200: #c7d2fe;
-            --primary-300: #a5b4fc;
-            --primary-400: #818cf8;
             --primary-500: #6366f1;
             --primary-600: #4f46e5;
-            --primary-700: #4338ca;
-            --primary-800: #3730a3;
-            --primary-900: #312e81;
-            
-            /* Secondary Color Palette */
-            --secondary-50: #fef3c7;
-            --secondary-100: #fde68a;
-            --secondary-200: #fcd34d;
-            --secondary-300: #fbbf24;
-            --secondary-400: #f59e0b;
-            --secondary-500: #d97706;
-            --secondary-600: #b45309;
-            --secondary-700: #92400e;
-            --secondary-800: #78350f;
-            --secondary-900: #65280f;
-            
-            /* Accent Colors */
-            --accent-1: #10b981; /* Emerald Green */
-            --accent-2: #06b6d4; /* Cyan */
-            --accent-3: #8b5cf6; /* Purple */
-            --accent-4: #ec4899; /* Pink */
-            --accent-5: #f43f5e; /* Red */
-            
-            /* Neutrals */
+            --secondary-500: #f59e0b;
+            --accent-1: #10b981;
+            --accent-2: #8b5cf6;
             --white: #ffffff;
             --gray-50: #f9fafb;
             --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
             --gray-800: #1f2937;
             --gray-900: #111827;
-            --black: #000000;
-            
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --gradient-warning: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            
-            /* Shadows */
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            
-            /* Border Radius */
-            --rounded-sm: 2px;
-            --rounded-md: 6px;
-            --rounded-lg: 12px;
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --rounded-xl: 20px;
-            --rounded-2xl: 30px;
             --rounded-full: 9999px;
-            
-            /* Transitions */
-            --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -94,500 +50,177 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: var(--gray-800);
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
-            z-index: -1;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6e9ff 100%);
+            padding-top: 20px;
         }
 
         /* ===== INSTALL BANNER ===== */
         .install-banner {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
-            padding: 1.5rem;
+            padding: 1.2rem;
             margin: 1rem;
             border-radius: var(--rounded-xl);
-            box-shadow: var(--shadow-xl);
+            box-shadow: var(--shadow-lg);
             position: relative;
             overflow: hidden;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
-            50% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
-        }
-
-        .install-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .install-banner-content {
-            position: relative;
-            z-index: 1;
         }
 
         .install-banner h3 {
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-        }
-
-        .install-banner p {
-            opacity: 0.95;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
+            gap: 8px;
         }
 
         .install-btn {
             background: white;
-            color: var(--primary-700);
+            color: var(--primary-600);
             border: none;
-            padding: 12px 30px;
+            padding: 10px 24px;
             border-radius: var(--rounded-full);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition-base);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+            gap: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin-top: 8px;
+            transition: var(--transition);
         }
 
         .install-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: var(--shadow-2xl);
-            background: var(--white);
-        }
-
-        .install-btn:active {
-            transform: translateY(0) scale(0.98);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
 
         /* ===== HEADER ===== */
         .header {
-            background: var(--gradient-secondary);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
             text-align: center;
-            padding: 3rem 1rem;
-            box-shadow: var(--shadow-xl);
+            padding: 2rem 1rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             position: relative;
             overflow: hidden;
-            margin-bottom: 2rem;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.2) 0%, transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.15) 0%, transparent 40%);
-            z-index: 0;
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .header-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            animation: rotate 3s ease-in-out infinite;
-        }
-
-        @keyframes rotate {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(360deg); }
+            margin-bottom: 1.5rem;
         }
 
         .header h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
+            font-size: 2.5rem;
+            margin-bottom: 0.4rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            letter-spacing: 1.5px;
             font-weight: 800;
             background: linear-gradient(to right, white, #fbbf24);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .header h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 400;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             opacity: 0.95;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 0.8rem;
-            font-weight: 500;
         }
 
         .header .year {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            margin-top: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-top: 0.3rem;
             background: linear-gradient(to right, #fee140, #fa709a);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* ===== INSTALL STEPS ===== */
-        .install-steps-container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .install-steps-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-700);
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .install-steps-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: var(--rounded-full);
-        }
-
-        .platform-section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .platform-card {
-            background: white;
-            border-radius: var(--rounded-2xl);
-            padding: 2rem;
-            box-shadow: var(--shadow-xl);
-            transition: var(--transition-slow);
-            border: 3px solid transparent;
-            background-clip: padding-box;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .platform-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-primary);
-            z-index: -1;
-            opacity: 0;
-            transition: var(--transition-base);
-        }
-
-        .platform-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        .platform-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .platform-card.android::before {
-            background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
-        }
-
-        .platform-card.iphone::before {
-            background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
-        }
-
-        .platform-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 8px 20px;
-            border-radius: var(--rounded-full);
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        .platform-badge.android {
-            background: linear-gradient(135deg, #4361ee 0%, #3f37c9 100%);
-        }
-
-        .platform-badge.iphone {
-            background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
-        }
-
-        .step-list {
-            list-style: none;
-        }
-
-        .step-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 15px;
-            margin-bottom: 10px;
-            background: var(--gray-50);
-            border-radius: var(--rounded-lg);
-            transition: var(--transition-fast);
-        }
-
-        .step-item:hover {
-            background: var(--primary-50);
-            transform: translateX(5px);
-        }
-
-        .step-number {
-            background: var(--gradient-primary);
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: var(--rounded-full);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            box-shadow: var(--shadow-md);
-        }
-
-        .step-text {
-            flex: 1;
-            font-weight: 500;
-        }
-
-        .step-text strong {
-            color: var(--primary-700);
-        }
-
-        .step-check {
-            background: var(--gradient-success);
-            color: white;
-        }
-
-        /* ===== NOTE BOX ===== */
-        .note-box {
-            background: linear-gradient(135deg, #fff9db 0%, #fff3bf 100%);
-            border-left: 6px solid var(--secondary-500);
-            padding: 1.5rem;
-            margin: 2rem 1rem;
-            border-radius: var(--rounded-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .note-box::before {
-            content: 'ℹ️';
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            font-size: 8rem;
-            opacity: 0.1;
-            transform: rotate(15deg);
-        }
-
-        .note-box strong {
-            color: var(--secondary-700);
-            font-weight: 700;
         }
 
         /* ===== NAVIGATION ===== */
         .nav-container {
             background: white;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
-            z-index: 100;
-            margin-bottom: 2rem;
+            z-index: 1000;
+            margin-bottom: 1.5rem;
         }
 
         .nav-tabs {
             display: flex;
             overflow-x: auto;
-            gap: 8px;
-            padding: 15px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--primary-500) var(--gray-200);
+            gap: 6px;
+            padding: 10px;
+            scrollbar-width: none;
         }
 
         .nav-tabs::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .nav-tabs::-webkit-scrollbar-track {
-            background: var(--gray-200);
-            border-radius: var(--rounded-full);
-        }
-
-        .nav-tabs::-webkit-scrollbar-thumb {
-            background: var(--primary-500);
-            border-radius: var(--rounded-full);
+            display: none;
         }
 
         .nav-btn {
-            background: linear-gradient(135deg, var(--primary-100), var(--primary-200));
+            background: #eef2ff;
             border: none;
-            padding: 14px 24px;
-            border-radius: var(--rounded-full);
+            padding: 12px 18px;
+            border-radius: 50px;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: var(--transition-base);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
             white-space: nowrap;
-            flex-shrink: 0;
-            color: var(--primary-800);
-            box-shadow: var(--shadow-md);
-            position: relative;
-            overflow: hidden;
+            min-width: 120px;
+            color: #4338ca;
+            box-shadow: var(--shadow-sm);
         }
 
-        .nav-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-primary);
-            z-index: -1;
-            opacity: 0;
-            transition: var(--transition-base);
-        }
-
-        .nav-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: var(--shadow-xl);
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--primary-500);
             color: white;
-        }
-
-        .nav-btn:hover::before {
-            opacity: 1;
-        }
-
-        .nav-btn.active {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-xl);
-            transform: scale(1.05);
-        }
-
-        .nav-btn.active::before {
-            opacity: 1;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
         }
 
         /* ===== MAIN CONTENT ===== */
         .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
         .content-section {
             background: white;
-            border-radius: var(--rounded-2xl);
-            box-shadow: var(--shadow-xl);
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
+            border-radius: var(--rounded-xl);
+            box-shadow: var(--shadow-lg);
+            padding: 1.8rem;
+            margin-bottom: 2rem;
             display: none;
-            animation: fadeInUp 0.6s ease-out;
             position: relative;
-            overflow: hidden;
-        }
-
-        .content-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 6px;
-            height: 100%;
-            background: var(--gradient-primary);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .content-section.active {
             display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section-title {
-            color: var(--primary-700);
-            font-size: 2.2rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
+            color: var(--primary-600);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
             position: relative;
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-weight: 800;
+            gap: 12px;
+            font-weight: 700;
         }
 
         .section-title::after {
@@ -595,77 +228,44 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 80px;
-            height: 5px;
-            background: var(--gradient-primary);
-            border-radius: var(--rounded-full);
-        }
-
-        .section-icon {
-            font-size: 2rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-500);
+            border-radius: 2px;
         }
 
         .subsection {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--primary-50), var(--white));
-            border-radius: var(--rounded-xl);
-            border-left: 5px solid var(--primary-500);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-base);
-        }
-
-        .subsection:hover {
-            transform: translateX(5px);
-            box-shadow: var(--shadow-lg);
+            margin-bottom: 1.8rem;
+            padding: 1.3rem;
+            background: #f8fafc;
+            border-radius: 16px;
+            border-left: 4px solid var(--primary-500);
+            box-shadow: var(--shadow-sm);
         }
 
         .subsection-title {
-            color: var(--accent-5);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            color: #ef4444;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
             font-weight: 700;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .subsection-content {
-            margin-left: 0;
-        }
-
-        .subsection-content p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-            color: var(--gray-700);
+            gap: 8px;
         }
 
         .subsection-content ul {
             list-style-type: none;
             padding-left: 0;
-            margin-top: 1rem;
+            margin-top: 0.8rem;
         }
 
         .subsection-content li {
-            padding: 10px 15px;
-            margin-bottom: 8px;
+            padding: 8px 12px 8px 32px;
+            margin-bottom: 6px;
             background: white;
-            border-radius: var(--rounded-lg);
-            border-left: 4px solid var(--accent-1);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-fast);
+            border-radius: 10px;
             position: relative;
-            padding-left: 35px;
-        }
-
-        .subsection-content li:hover {
-            transform: translateX(3px);
-            box-shadow: var(--shadow-md);
-            background: var(--primary-50);
+            font-size: 0.95rem;
         }
 
         .subsection-content li::before {
@@ -675,424 +275,363 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--accent-1);
-            font-size: 1.2rem;
             font-weight: bold;
+            font-size: 1rem;
         }
 
         .subsection-content ol {
-            padding-left: 2.5rem;
-            margin: 1.5rem 0;
+            padding-left: 1.8rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
         }
 
         .subsection-content ol li {
-            margin-bottom: 12px;
-            line-height: 1.8;
-            padding-left: 10px;
-            position: relative;
-        }
-
-        .subsection-content ol li::before {
-            content: counter(item) '.';
-            counter-increment: item;
-            position: absolute;
-            left: -25px;
-            color: var(--primary-600);
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        ol {
-            counter-reset: item;
+            margin-bottom: 8px;
+            line-height: 1.7;
         }
 
         /* ===== BIBLE VERSE ===== */
         .bible-verse {
-            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
-            border: 3px solid var(--secondary-300);
-            border-radius: var(--rounded-xl);
-            padding: 2rem;
-            margin: 2rem 0;
-            position: relative;
-            box-shadow: var(--shadow-lg);
+            background: linear-gradient(135deg, #fff9db 0%, #fff3bf 100%);
+            border-radius: 16px;
+            padding: 1.8rem;
+            margin: 1.8rem 0;
             text-align: center;
+            border: 2px solid #f59e0b;
+            position: relative;
         }
 
         .bible-verse::before {
             content: '"';
             position: absolute;
-            top: -20px;
+            top: -15px;
             left: 20px;
-            font-size: 6rem;
-            color: var(--secondary-300);
-            opacity: 0.3;
+            font-size: 4rem;
+            color: rgba(245, 158, 11, 0.3);
             font-family: Georgia, serif;
-        }
-
-        .bible-verse::after {
-            content: '"';
-            position: absolute;
-            bottom: -40px;
-            right: 20px;
-            font-size: 6rem;
-            color: var(--secondary-300);
-            opacity: 0.3;
-            font-family: Georgia, serif;
-            transform: rotate(180deg);
         }
 
         .bible-reference {
             display: block;
             text-align: right;
             font-weight: 700;
-            margin-top: 1.5rem;
-            color: var(--secondary-700);
-            font-size: 1.1rem;
-            padding-top: 1rem;
-            border-top: 2px dashed var(--secondary-300);
+            margin-top: 1.2rem;
+            color: #b45309;
+            font-style: italic;
         }
 
         /* ===== CARD STYLES ===== */
         .card {
             background: white;
-            border-radius: var(--rounded-xl);
-            box-shadow: var(--shadow-lg);
-            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            padding: 1.6rem;
             margin-bottom: 1.5rem;
-            transition: var(--transition-base);
-            border-left: 6px solid var(--accent-3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .card-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: var(--shadow-xl);
+            border-left: 5px solid var(--accent-2);
         }
 
         .card-title {
-            font-weight: 800;
-            color: var(--accent-3);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-2);
+            margin-bottom: 0.8rem;
+            font-size: 1.15rem;
             display: flex;
             align-items: center;
-            gap: 10px;
-        }
-
-        .card-content p {
-            color: var(--gray-700);
-            line-height: 1.8;
+            gap: 8px;
         }
 
         /* ===== FORM STYLES ===== */
         .form-section {
             background: white;
-            border-radius: var(--rounded-2xl);
-            box-shadow: var(--shadow-xl);
-            padding: 2.5rem;
-            margin-top: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .form-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
-            z-index: 0;
+            border-radius: var(--rounded-xl);
+            box-shadow: var(--shadow-lg);
+            padding: 2rem;
+            margin-top: 1.5rem;
         }
 
         .form-title {
-            color: var(--primary-700);
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            color: var(--primary-600);
+            font-size: 1.7rem;
+            margin-bottom: 1.8rem;
             text-align: center;
-            font-weight: 800;
+            font-weight: 700;
             position: relative;
-            z-index: 1;
         }
 
         .form-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: var(--rounded-full);
+            width: 70px;
+            height: 3px;
+            background: var(--primary-500);
+            border-radius: 2px;
         }
 
         .form-group {
-            margin-bottom: 1.8rem;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
-            font-weight: 700;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
             color: var(--gray-800);
-            font-size: 1.05rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .form-control {
             width: 100%;
-            padding: 14px 18px;
-            border: 3px solid var(--gray-200);
-            border-radius: var(--rounded-lg);
+            padding: 12px 15px;
+            border: 2px solid #d1d5db;
+            border-radius: 12px;
             font-size: 1rem;
-            transition: var(--transition-base);
+            transition: var(--transition);
             font-family: inherit;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--primary-500);
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
-            background: var(--primary-50);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            background: #f9fafb;
         }
 
         textarea.form-control {
-            min-height: 120px;
+            min-height: 100px;
             resize: vertical;
         }
 
         .form-row {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
         }
 
         /* ===== BUTTONS ===== */
         .action-btn {
-            padding: 14px 32px;
-            border-radius: var(--rounded-full);
+            padding: 12px 28px;
+            border-radius: 50px;
             font-weight: 700;
-            font-size: 1.05rem;
+            font-size: 1rem;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            transition: var(--transition-base);
+            gap: 8px;
+            transition: var(--transition);
             border: none;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .btn-primary {
-            background: var(--gradient-primary);
+            background: var(--primary-500);
             color: white;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: var(--shadow-2xl);
+            background: var(--primary-600);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
         }
 
         .btn-danger {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            background: #ef4444;
             color: white;
         }
 
         .btn-danger:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px -5px rgba(239, 68, 68, 0.4);
-        }
-
-        .btn-success {
-            background: var(--gradient-success);
-            color: white;
-        }
-
-        .btn-success:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px -5px rgba(67, 233, 123, 0.4);
+            background: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
         }
 
         .btn-block {
             display: block;
             width: 100%;
-            margin: 1.5rem auto;
+            margin: 1.2rem auto;
         }
 
         /* ===== FOOTER ===== */
         .footer {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);
             color: white;
             text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 4rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 40%);
-            z-index: 0;
-        }
-
-        .footer-content {
-            position: relative;
-            z-index: 1;
+            padding: 2.2rem 1rem;
+            margin-top: 3rem;
         }
 
         .footer h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
             font-weight: 700;
         }
 
         .footer p {
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             opacity: 0.95;
-            font-size: 1.05rem;
         }
 
         .footer .date {
             font-weight: 700;
-            color: var(--secondary-200);
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
+            color: #fcd34d;
+            margin-top: 0.4rem;
         }
 
         .footer-copyright {
-            margin-top: 2rem;
-            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            padding-top: 1.2rem;
             border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.95rem;
-            opacity: 0.8;
+            font-size: 0.9rem;
+            opacity: 0.85;
         }
 
         /* ===== HIGHLIGHT EFFECT ===== */
         .highlight {
-            background: linear-gradient(120deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0));
-            padding: 3px 8px;
-            border-radius: var(--rounded-md);
+            background: linear-gradient(120deg, rgba(139, 92, 246, 0.2), transparent);
+            padding: 2px 7px;
+            border-radius: 6px;
             font-weight: 700;
-            color: var(--accent-3);
+            color: var(--accent-2);
         }
 
-        /* ===== ANIMATED BACKGROUND ELEMENTS ===== */
-        .animated-bg {
-            position: fixed;
-            width: 200px;
-            height: 200px;
+        /* ===== IMPORTANT NOTICE ===== */
+        .important-notice {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 5px solid #3b82f6;
+            padding: 1.4rem;
+            margin: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+        }
+
+        .important-notice::before {
+            content: '❗';
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            font-size: 2.5rem;
+            opacity: 0.2;
+        }
+
+        .important-notice h4 {
+            color: #1e40af;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* ===== PLATFORM GUIDE ===== */
+        .platform-guide {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .platform-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.6rem;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid #6366f1;
+        }
+
+        .platform-card.android {
+            border-top-color: #1e40af;
+        }
+
+        .platform-card.iphone {
+            border-top-color: #0ea5e9;
+        }
+
+        .platform-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            width: fit-content;
+        }
+
+        .platform-card.iphone .platform-badge {
+            background: #dbeafe;
+            color: #0ea5e9;
+        }
+
+        .step-list {
+            list-style: none;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .step-item:last-child {
+            border-bottom: none;
+        }
+
+        .step-number {
+            background: #6366f1;
+            color: white;
+            min-width: 26px;
+            height: 26px;
             border-radius: 50%;
-            z-index: -1;
-            opacity: 0.1;
-            animation: float 15s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+            margin-top: 3px;
         }
 
-        .bg-1 {
-            background: var(--primary-500);
-            top: 20%;
-            left: 10%;
-            width: 300px;
-            height: 300px;
-            animation-delay: 0s;
+        .platform-card.iphone .step-number {
+            background: #0ea5e9;
         }
 
-        .bg-2 {
-            background: var(--accent-1);
-            bottom: 15%;
-            right: 10%;
-            width: 250px;
-            height: 250px;
-            animation-delay: 2s;
-        }
-
-        .bg-3 {
-            background: var(--accent-4);
-            top: 60%;
-            left: 20%;
-            width: 150px;
-            height: 150px;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(20px, 20px) scale(1.1); }
-            50% { transform: translate(0, 40px) scale(1); }
-            75% { transform: translate(-20px, 20px) scale(0.9); }
+        .step-check {
+            background: #10b981 !important;
         }
 
         /* ===== RESPONSIVE STYLES ===== */
         @media (max-width: 768px) {
             .header h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
-
             .header h2 {
-                font-size: 1.4rem;
-            }
-
-            .header p {
-                font-size: 1rem;
-            }
-
-            .header .year {
-                font-size: 1.6rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .subsection-title {
                 font-size: 1.3rem;
             }
-
-            .nav-btn {
-                padding: 12px 18px;
-                font-size: 0.85rem;
+            .header .year {
+                font-size: 1.5rem;
             }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .content-section {
-                padding: 1.8rem;
-            }
-
-            .form-title {
+            .section-title {
                 font-size: 1.6rem;
             }
-
-            .platform-section {
-                grid-template-columns: 1fr;
+            .subsection-title {
+                font-size: 1.2rem;
+            }
+            .nav-btn {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+                min-width: 100px;
+            }
+            .content-section {
+                padding: 1.5rem;
+            }
+            .form-title {
+                font-size: 1.5rem;
             }
         }
 
@@ -1100,140 +639,70 @@
             .header h1 {
                 font-size: 1.8rem;
             }
-
             .header h2 {
                 font-size: 1.2rem;
             }
-
-            .header-icon {
-                font-size: 3rem;
+            .nav-tabs {
+                padding: 8px 5px;
             }
-
             .nav-btn {
-                padding: 10px 15px;
+                padding: 9px 14px;
                 font-size: 0.8rem;
+                min-width: 90px;
             }
-
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
-
             .action-btn {
-                padding: 12px 24px;
+                padding: 11px 24px;
                 font-size: 0.95rem;
+            }
+            .container {
+                padding: 0 0.8rem;
+            }
+            .install-banner {
+                margin: 0.8rem;
+                padding: 1rem;
+            }
+            .important-notice {
+                margin: 1rem 0.8rem;
+                padding: 1.2rem;
             }
         }
 
         /* ===== PRINT STYLES ===== */
         @media print {
-            .install-banner, .install-steps-container, .nav-container, .footer {
-                display: none;
+            .install-banner, .nav-container, .footer, .platform-guide, .important-notice {
+                display: none !important;
             }
-            
             body {
                 background: white;
                 padding-top: 0;
             }
-            
             .content-section {
                 display: block !important;
                 box-shadow: none;
-                padding: 1.5rem;
+                padding: 1.2rem;
             }
-            
             .subsection {
                 background: white;
                 border: 1px solid #ddd;
             }
         }
-
-        /* ===== LOADING ANIMATION ===== */
-        .loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-        }
-
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 6px solid rgba(102, 126, 234, 0.3);
-            border-top-color: var(--primary-600);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* ===== BADGE STYLES ===== */
-        .badge {
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: var(--rounded-full);
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin: 3px 0;
-        }
-
-        .badge-primary {
-            background: var(--gradient-primary);
-            color: white;
-        }
-
-        .badge-success {
-            background: var(--gradient-success);
-            color: white;
-        }
-
-        .badge-warning {
-            background: var(--gradient-warning);
-            color: white;
-        }
-
-        /* ===== ICON STYLES ===== */
-        .icon-box {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: var(--rounded-full);
-            background: var(--gradient-primary);
-            color: white;
-            margin-right: 10px;
-            flex-shrink: 0;
-        }
     </style>
 </head>
 <body>
-    <!-- Animated Background Elements -->
-    <div class="animated-bg bg-1"></div>
-    <div class="animated-bg bg-2"></div>
-    <div class="animated-bg bg-3"></div>
-
     <!-- Install Banner -->
     <div class="install-banner">
-        <div class="install-banner-content">
-            <h3><i class="fas fa-mobile-alt"></i> Install Aplikasi Buku Saku GKPS</h3>
-            <p>
-                Tekan tombol <strong>⋮</strong> di Chrome atau <strong>📤</strong> di Safari, 
-                lalu pilih <strong>"Install App"</strong> atau <strong>"Tambah ke Layar Utama"</strong>
-            </p>
-            <button class="install-btn" onclick="showInstallGuide()">
-                <i class="fas fa-info-circle"></i> Panduan Lengkap
-            </button>
-        </div>
+        <h3><i class="fas fa-mobile-alt"></i> Cara Install ke HP</h3>
+        <button class="install-btn" onclick="showInstallGuide()">
+            <i class="fas fa-info-circle"></i> Lihat Panduan
+        </button>
     </div>
 
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <div class="header-icon">
-                <i class="fas fa-book-open"></i>
-            </div>
             <h1>📖 BUKU SAKU</h1>
             <h2>PARTONGGOAN PARJUMATANGANAN</h2>
             <p>DI GEREJA KRISTEN PROTESTAN SIMALUNGUN (GKPS)</p>
@@ -1241,84 +710,75 @@
         </div>
     </header>
 
-    <!-- Install Steps -->
-    <div class="install-steps-container">
-        <h2 class="install-steps-title">📱 Cara Install Aplikasi</h2>
-        
-        <div class="platform-section">
+    <!-- Important Notice -->
+    <div class="important-notice">
+        <h4>⚠️ Penting untuk Pengguna HP</h4>
+        <p><strong>File ini tidak bisa di-install otomatis</strong> karena dibuka dari file lokal (file://).</p>
+        <p>✅ <strong>Solusi:</strong> Ikuti panduan "Tambah ke Layar Utama" di bawah untuk membuat shortcut di HP Anda.</p>
+        <p>💡 <strong>Tips:</strong> Untuk pengalaman terbaik, upload file ke Google Drive dan buka via link (lihat panduan lengkap di bawah).</p>
+    </div>
+
+    <!-- Platform Guide -->
+    <div class="container">
+        <div class="platform-guide">
             <!-- Android Card -->
             <div class="platform-card android">
-                <div class="platform-badge android">
+                <div class="platform-badge">
                     <i class="fab fa-android"></i> ANDROID (Chrome)
                 </div>
                 <ul class="step-list">
                     <li class="step-item">
                         <div class="step-number">1</div>
-                        <div class="step-text">Buka halaman ini di <strong>Chrome</strong></div>
+                        <div>Buka file ini di <strong>Chrome</strong></div>
                     </li>
                     <li class="step-item">
                         <div class="step-number">2</div>
-                        <div class="step-text">Klik menu <strong>⋮ (titik tiga)</strong> di pojok kanan atas</div>
+                        <div>Klik <strong>⋮ (titik tiga)</strong> di pojok kanan atas</div>
                     </li>
                     <li class="step-item">
                         <div class="step-number">3</div>
-                        <div class="step-text">Pilih <strong>"Install app"</strong> atau <strong>"Tambahkan ke Layar utama"</strong></div>
+                        <div>Pilih <strong>"Tambahkan ke Layar utama"</strong></div>
                     </li>
                     <li class="step-item">
                         <div class="step-number">4</div>
-                        <div class="step-text">Beri nama: <strong>"Buku Saku GKPS"</strong></div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">5</div>
-                        <div class="step-text">Klik <strong>"Install"</strong> atau <strong>"Tambah"</strong></div>
+                        <div>Beri nama: <strong>"Buku Saku GKPS"</strong></div>
                     </li>
                     <li class="step-item">
                         <div class="step-number step-check">✓</div>
-                        <div class="step-text"><strong>Aplikasi siap digunakan di Home Screen HP Anda!</strong></div>
+                        <div><strong>Selesai!</strong> Buka dari home screen HP Anda</div>
                     </li>
                 </ul>
             </div>
 
             <!-- iPhone Card -->
             <div class="platform-card iphone">
-                <div class="platform-badge iphone">
+                <div class="platform-badge">
                     <i class="fab fa-apple"></i> IPHONE (Safari)
                 </div>
                 <ul class="step-list">
                     <li class="step-item">
                         <div class="step-number">1</div>
-                        <div class="step-text">Buka halaman ini di <strong>Safari</strong></div>
+                        <div>Buka file ini di <strong>Safari</strong></div>
                     </li>
                     <li class="step-item">
                         <div class="step-number">2</div>
-                        <div class="step-text">Klik tombol <strong>📤 (Share)</strong> di bawah</div>
+                        <div>Klik tombol <strong>📤 Share</strong> di bawah</div>
                     </li>
                     <li class="step-item">
                         <div class="step-number">3</div>
-                        <div class="step-text">Scroll ke bawah, pilih <strong>"Tambah ke Layar Utama"</strong></div>
+                        <div>Scroll cari <strong>"Tambah ke Layar Utama"</strong></div>
                     </li>
                     <li class="step-item">
                         <div class="step-number">4</div>
-                        <div class="step-text">Beri nama: <strong>"Buku Saku GKPS"</strong></div>
-                    </li>
-                    <li class="step-item">
-                        <div class="step-number">5</div>
-                        <div class="step-text">Klik <strong>"Tambah"</strong></div>
+                        <div>Beri nama: <strong>"Buku Saku GKPS"</strong></div>
                     </li>
                     <li class="step-item">
                         <div class="step-number step-check">✓</div>
-                        <div class="step-text"><strong>Aplikasi siap digunakan di Home Screen iPhone Anda!</strong></div>
+                        <div><strong>Selesai!</strong> Buka dari home screen iPhone Anda</div>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
-
-    <!-- Note Box -->
-    <div class="note-box">
-        <strong>ℹ️ CATATAN PENTING:</strong> Jika file dibuka langsung dari komputer/HP (file://), Chrome tidak akan menampilkan opsi "Install". 
-        Untuk fitur lengkap, file perlu di-upload ke hosting online (HTTPS). 
-        Namun cara manual di atas tetap berfungsi untuk menambahkan ke home screen!
     </div>
 
     <!-- Navigation -->
@@ -1328,13 +788,13 @@
                 <i class="fas fa-home"></i> Pendahuluan
             </button>
             <button class="nav-btn" data-section="dasar">
-                <i class="fas fa-bible"></i> Dasar Pelaksanaan
+                <i class="fas fa-bible"></i> Dasar
             </button>
             <button class="nav-btn" data-section="tujuan">
                 <i class="fas fa-bullseye"></i> Tujuan
             </button>
             <button class="nav-btn" data-section="alasan">
-                <i class="fas fa-question-circle"></i> Alasan
+                <i class="fas fa-question"></i> Alasan
             </button>
             <button class="nav-btn" data-section="struktur">
                 <i class="fas fa-sitemap"></i> Struktur
@@ -1352,13 +812,13 @@
                 <i class="fas fa-chart-line"></i> Evaluasi
             </button>
             <button class="nav-btn" data-section="pengajaran">
-                <i class="fas fa-chalkboard-teacher"></i> Pengajaran
+                <i class="fas fa-chalkboard"></i> Pengajaran
             </button>
             <button class="nav-btn" data-section="hasil">
                 <i class="fas fa-trophy"></i> Hasil
             </button>
             <button class="nav-btn" data-section="lampiran">
-                <i class="fas fa-file-alt"></i> Lampiran
+                <i class="fas fa-file"></i> Lampiran
             </button>
         </div>
     </div>
@@ -1368,7 +828,7 @@
         <!-- Section A: Pendahuluan -->
         <section id="pendahuluan" class="content-section active">
             <h2 class="section-title">
-                <i class="fas fa-book-reader section-icon"></i> A. PENDAHULUAN
+                <i class="fas fa-book-reader"></i> A. PENDAHULUAN
             </h2>
             
             <div class="subsection">
@@ -1393,20 +853,18 @@
                 <div class="card-title">
                     <i class="fas fa-user-tie"></i> Peran Sintua Parjumatanganan
                 </div>
-                <div class="card-content">
-                    <p>
-                        Sesuai dengan Tata Laksana GKPS, Sintua parjumatanganan adalah Sintua yang membimbing atau memimpin Komunitas Jumatanganan. 
-                        Sintua tersebutlah yang bertanggung jawab atas pembinaan rohani, koordinasi kegiatan, dan pelayanan di kelompok jumatanganan jemaat tersebut 
-                        dan menjadi perpanjangan tangan gereja dalam pelayanan kepada keluarga.
-                    </p>
-                </div>
+                <p>
+                    Sesuai dengan Tata Laksana GKPS, Sintua parjumatanganan adalah Sintua yang membimbing atau memimpin Komunitas Jumatanganan. 
+                    Sintua tersebutlah yang bertanggung jawab atas pembinaan rohani, koordinasi kegiatan, dan pelayanan di kelompok jumatanganan jemaat tersebut 
+                    dan menjadi perpanjangan tangan gereja dalam pelayanan kepada keluarga.
+                </p>
             </div>
         </section>
 
         <!-- Section B.I: Dasar Pelaksanaan -->
         <section id="dasar" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-book-bible section-icon"></i> B.I. DASAR PELAKSANAAN
+                <i class="fas fa-book-bible"></i> B.I. DASAR PELAKSANAAN
             </h2>
             
             <div class="subsection">
@@ -1451,7 +909,7 @@
         <!-- Section B.II: Tujuan -->
         <section id="tujuan" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-bullseye section-icon"></i> B.II. TUJUAN PARTONGGOAN JUMATANGANAN
+                <i class="fas fa-bullseye"></i> B.II. TUJUAN PARTONGGOAN JUMATANGANAN
             </h2>
             
             <div class="subsection-content">
@@ -1468,7 +926,7 @@
         <!-- Section B.III: Alasan -->
         <section id="alasan" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-question-circle section-icon"></i> B.III. ALASAN / MENGAPA DIPERLUKAN PARTONGGOAN JUMATANGANAN
+                <i class="fas fa-question-circle"></i> B.III. ALASAN / MENGAPA DIPERLUKAN PARTONGGOAN JUMATANGANAN
             </h2>
             
             <div class="subsection-content">
@@ -1484,7 +942,7 @@
         <!-- Section B.IV: Struktur -->
         <section id="struktur" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-sitemap section-icon"></i> B.IV. STRUKTUR PELAKSANA
+                <i class="fas fa-sitemap"></i> B.IV. STRUKTUR PELAKSANA
             </h2>
             
             <div class="subsection">
@@ -1533,7 +991,7 @@
         <!-- Section B.V: Petunjuk -->
         <section id="petunjuk" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-book section-icon"></i> B.V. PETUNJUK PELAKSANAAN
+                <i class="fas fa-book"></i> B.V. PETUNJUK PELAKSANAAN
             </h2>
             
             <div class="subsection-content">
@@ -1553,7 +1011,7 @@
         <!-- Section B.VI: Tata Ibadah -->
         <section id="tata-ibadah" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-pray section-icon"></i> B.VI. TATA IBADAH PARJUMA TANGANAN
+                <i class="fas fa-pray"></i> B.VI. TATA IBADAH PARJUMA TANGANAN
             </h2>
             
             <div class="subsection">
@@ -1577,7 +1035,7 @@
         <!-- Section B.VII: Etika -->
         <section id="etika" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-handshake section-icon"></i> B.VII. ETIKA IBADAH DAN KOMUNIKASI SINTUA
+                <i class="fas fa-handshake"></i> B.VII. ETIKA IBADAH DAN KOMUNIKASI SINTUA
             </h2>
             
             <div class="subsection">
@@ -1590,7 +1048,6 @@
                         <li>✓ Menjaga ketenangan dan hormat satu dengan yang lain.</li>
                         <li>✓ Menjaga suasana rohani, penuh kasih dan damai.</li>
                         <li>✓ Tidak menggunakan ibadah untuk keluhan pribadi.</li>
-                        <li>✓ Menjaga suasana rohani, penuh kasih dan damai.</li>
                     </ul>
                 </div>
             </div>
@@ -1614,7 +1071,7 @@
         <!-- Section B.VIII: Evaluasi -->
         <section id="evaluasi" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-chart-line section-icon"></i> B.VIII. EVALUASI IBADAH PARJUMA TANGANAN
+                <i class="fas fa-chart-line"></i> B.VIII. EVALUASI IBADAH PARJUMA TANGANAN
             </h2>
             
             <div class="subsection-content">
@@ -1629,7 +1086,7 @@
         <!-- Section B.IX: Pengajaran -->
         <section id="pengajaran" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-chalkboard-teacher section-icon"></i> B.IX. SINTUA MENGADAKAN PENGAJARAN
+                <i class="fas fa-chalkboard-teacher"></i> B.IX. SINTUA MENGADAKAN PENGAJARAN
             </h2>
             
             <div class="subsection">
@@ -1650,7 +1107,7 @@
 
             <div class="subsection">
                 <div class="subsection-title">
-                    <i class="fas fa-comments-dollar"></i> B. Bentuk Pengajaran
+                    <i class="fas fa-comments"></i> B. Bentuk Pengajaran
                 </div>
                 <div class="subsection-content">
                     <ul>
@@ -1695,7 +1152,7 @@
         <!-- Section B.X: Hasil -->
         <section id="hasil" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-trophy section-icon"></i> B.X. HASIL YANG DIHARAPKAN
+                <i class="fas fa-trophy"></i> B.X. HASIL YANG DIHARAPKAN
             </h2>
             
             <div class="subsection-content">
@@ -1709,7 +1166,7 @@
         <!-- Section C: Lampiran -->
         <section id="lampiran" class="content-section">
             <h2 class="section-title">
-                <i class="fas fa-file-alt section-icon"></i> C. LAMPIRAN - FORMAT LAPORAN SINTUA PARJUMATANGANAN
+                <i class="fas fa-file-alt"></i> C. LAMPIRAN - FORMAT LAPORAN SINTUA
             </h2>
             
             <div class="form-section">
@@ -1719,14 +1176,14 @@
                 
                 <div class="form-group">
                     <label for="nama">
-                        <i class="fas fa-user-tag icon-box"></i> a. Nama
+                        <i class="fas fa-user"></i> a. Nama
                     </label>
                     <input type="text" id="nama" class="form-control" placeholder="Contoh: St. Sibujur Uhur Saragih">
                 </div>
 
                 <div class="form-group">
                     <label for="jumatanganan">
-                        <i class="fas fa-users icon-box"></i> b. Jumatanganan (4 Keluarga)
+                        <i class="fas fa-users"></i> b. Jumatanganan (4 Keluarga)
                     </label>
                     <textarea id="jumatanganan" class="form-control" placeholder="Contoh:
 Kel. Bp. Siboan Damei Purba
@@ -1738,14 +1195,14 @@ Kel. Bp. Siparayakon Sihite"></textarea>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="tanggal">
-                            <i class="fas fa-calendar-alt icon-box"></i> c. Tanggal Pelaksanaan
+                            <i class="fas fa-calendar"></i> c. Tanggal Pelaksanaan
                         </label>
                         <input type="date" id="tanggal" class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label for="tempat">
-                            <i class="fas fa-home icon-box"></i> d. Tempat Rumah
+                            <i class="fas fa-home"></i> d. Tempat Rumah
                         </label>
                         <input type="text" id="tempat" class="form-control" placeholder="Contoh: Kel Bp. Siboan Damei Purba">
                     </div>
@@ -1753,7 +1210,7 @@ Kel. Bp. Siparayakon Sihite"></textarea>
 
                 <div class="form-group">
                     <label for="kehadiran">
-                        <i class="fas fa-user-friends icon-box"></i> e. Jumlah Keluarga Hadir
+                        <i class="fas fa-user-friends"></i> e. Jumlah Keluarga Hadir
                     </label>
                     <div class="form-row">
                         <div class="form-group">
@@ -1773,30 +1230,30 @@ Kel. Bp. Siparayakon Sihite"></textarea>
 
                 <div class="form-group">
                     <label for="pokok-doa">
-                        <i class="fas fa-hands-praying icon-box"></i> f. Pokok-pokok Doa
+                        <i class="fas fa-hands-praying"></i> f. Pokok-pokok Doa
                     </label>
                     <textarea id="pokok-doa" class="form-control" placeholder="Tuliskan pokok-pokok doa yang didoakan"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="galangan">
-                        <i class="fas fa-coins icon-box"></i> g. Galangan (Persembahan)
+                        <i class="fas fa-coins"></i> g. Galangan (Persembahan)
                     </label>
                     <input type="text" id="galangan" class="form-control" placeholder="Rp.................">
                 </div>
 
                 <div class="form-group">
                     <label for="tema">
-                        <i class="fas fa-lightbulb icon-box"></i> h. Tema Renungan
+                        <i class="fas fa-lightbulb"></i> h. Tema Renungan
                     </label>
-                    <input type="text" id="tema" class="form-control" placeholder="Contoh: Martangkupas Pasonang Paruhuran, Pasu pasu na gokan dear">
+                    <input type="text" id="tema" class="form-control" placeholder="Contoh: Martangkupas Pasonang Paruhuran">
                 </div>
 
                 <div class="form-group">
                     <label for="catatan">
-                        <i class="fas fa-exclamation-triangle icon-box"></i> i. Catatan Khusus untuk Tindak Lanjut Pastoral
+                        <i class="fas fa-exclamation-triangle"></i> i. Catatan Khusus untuk Tindak Lanjut Pastoral
                     </label>
-                    <textarea id="catatan" class="form-control" placeholder="Contoh: KDRT, Sirang so sirang, Percobaan Bunuh Diri, Aib Berat, Terjerat narkoba, dll"></textarea>
+                    <textarea id="catatan" class="form-control" placeholder="Contoh: KDRT, Sirang so sirang, Percobaan Bunuh Diri, dll"></textarea>
                 </div>
             </div>
         </section>
@@ -1805,7 +1262,7 @@ Kel. Bp. Siparayakon Sihite"></textarea>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <h3><i class="fas fa-book-open"></i> Buku Saku Partonggoan Parjumatanganan di GKPS</h3>
+            <h3><i class="fas fa-book-open"></i> Buku Saku Partonggoan Parjumatanganan GKPS</h3>
             <p>Pematangsiantar, Oktober 2025</p>
             <p class="date"><i class="fas fa-user-tie"></i> Pimpinan Sinode GKPS</p>
             <p class="footer-copyright">
@@ -1815,13 +1272,16 @@ Kel. Bp. Siparayakon Sihite"></textarea>
     </footer>
 
     <script>
-        // Navigation functionality
+        // FIX SCROLLING ISSUE - Remove problematic touch handlers
         document.addEventListener('DOMContentLoaded', function() {
+            // Navigation functionality
             const navButtons = document.querySelectorAll('.nav-btn');
             const sections = document.querySelectorAll('.content-section');
             
             navButtons.forEach((button, index) => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default but don't stop propagation
+                    
                     // Remove active class from all buttons and sections
                     navButtons.forEach(btn => btn.classList.remove('active'));
                     sections.forEach(section => section.classList.remove('active'));
@@ -1833,10 +1293,12 @@ Kel. Bp. Siparayakon Sihite"></textarea>
                     const sectionId = this.getAttribute('data-section');
                     document.getElementById(sectionId).classList.add('active');
                     
-                    // Scroll to top smoothly
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
+                    // Scroll to top smoothly - FIX: Use requestAnimationFrame for mobile stability
+                    requestAnimationFrame(() => {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                     });
                 });
             });
@@ -1876,12 +1338,12 @@ Kel. Bp. Siparayakon Sihite"></textarea>
                 lampiranSection.querySelector('.form-section').appendChild(clearBtn);
             }
             
-            // Print functionality
+            // Print button
             const printBtn = document.createElement('button');
-            printBtn.innerHTML = '<i class="fas fa-print"></i> 🖨️ Cetak / PDF';
-            printBtn.className = 'action-btn btn-success btn-block';
+            printBtn.innerHTML = '<i class="fas fa-print"></i> Cetak / PDF';
+            printBtn.className = 'action-btn btn-primary btn-block';
             printBtn.onclick = function() {
-                if (confirm('Apakah Anda ingin mencetak atau menyimpan sebagai PDF?')) {
+                if (confirm('Cetak sebagai PDF?')) {
                     window.print();
                 }
             };
@@ -1898,60 +1360,67 @@ Kel. Bp. Siparayakon Sihite"></textarea>
             printContainer.appendChild(printBtn);
             header.appendChild(printContainer);
             
-            // Add swipe functionality for mobile
-            let touchStartX = 0;
-            let touchEndX = 0;
+            // CRITICAL FIX: Remove touch handlers that cause scroll jump
+            // These were causing the page to jump back to top on mobile
+            // We'll keep only essential touch handling
             
-            document.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            }, false);
-            
-            document.addEventListener('touchend', function(e) {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, false);
-            
-            function handleSwipe() {
-                const currentIndex = Array.from(navButtons).findIndex(btn => btn.classList.contains('active'));
-                
-                if (touchEndX < touchStartX && currentIndex < navButtons.length - 1) {
-                    // Swipe left - next section
-                    navButtons[currentIndex + 1].click();
-                }
-                
-                if (touchEndX > touchStartX && currentIndex > 0) {
-                    // Swipe right - previous section
-                    navButtons[currentIndex - 1].click();
-                }
-            }
-        });
-        
-        // Show install guide
-        function showInstallGuide() {
-            const guide = `
-📱 CARA INSTALL APLIKASI INI:
+            // Show install guide
+            window.showInstallGuide = function() {
+                const guide = `
+📱 CARA MENAMBAHKAN KE LAYAR UTAMA HP:
 
 ANDROID (Chrome):
-1. Klik menu ⋮ di pojok kanan atas
-2. Pilih "Install app" atau "Tambahkan ke Layar utama"
-3. Klik "Install"
-4. Aplikasi siap di Home Screen!
+1. Buka file ini di Chrome
+2. Tap ⋮ (titik tiga) di pojok kanan atas
+3. Pilih "Tambahkan ke Layar utama"
+4. Beri nama "Buku Saku GKPS"
+5. Tap "Tambah"
+6. Buka dari home screen HP Anda
 
 IPHONE (Safari):
-1. Klik tombol Share 📤 di bawah
-2. Pilih "Tambah ke Layar Utama"
-3. Beri nama "Buku Saku GKPS"
-4. Klik "Tambah"
-5. Aplikasi siap di Home Screen!
+1. Buka file ini di Safari
+2. Tap tombol Share (📤) di bawah
+3. Scroll cari "Tambah ke Layar Utama"
+4. Beri nama "Buku Saku GKPS"
+5. Tap "Tambah"
+6. Buka dari home screen iPhone Anda
 
-LAPTOP/PC:
-- Bookmark halaman ini untuk akses cepat
-- Atau print sebagai PDF
-
-✅ Aplikasi ini GRATIS dan bisa digunakan OFFLINE setelah diinstall!
+💡 TIPS PENTING:
+• File lokal TIDAK BISA di-install otomatis
+• Untuk pengalaman terbaik: 
+  1. Upload file ke Google Drive
+  2. Klik kanan file → "Dapatkan link"
+  3. Set "Siapa saja yang memiliki link"
+  4. Buka link di HP → ikuti langkah di atas
+• Setelah ditambahkan ke home screen, 
+  aplikasi bisa dibuka OFFLINE!
 `;
-            alert(guide);
-        }
+                alert(guide);
+            };
+            
+            // Prevent pull-to-refresh that causes scroll jump on mobile
+            let touchStartY = 0;
+            document.addEventListener('touchstart', function(e) {
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+            
+            document.addEventListener('touchmove', function(e) {
+                const touchY = e.touches[0].clientY;
+                const touchDiff = touchY - touchStartY;
+                
+                // Only prevent default if scrolling up at the very top
+                if (window.scrollY === 0 && touchDiff > 0) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        });
+        
+        // CRITICAL: Disable overscroll bounce on iOS that causes jump
+        document.body.addEventListener('touchmove', function(e) {
+            if (document.body.scrollHeight === document.body.clientHeight) {
+                e.preventDefault();
+            }
+        }, { passive: false });
     </script>
 </body>
 </html>

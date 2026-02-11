@@ -2,16 +2,15 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta name="description" content="Buku Saku Partonggoan Parjumatanganan GKPS">
     <meta name="theme-color" content="#6366f1">
     <title>📖 Buku Saku GKPS - Partonggoan Parjumatanganan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== FIX SCROLLING - CRITICAL CSS ===== */
+        /* ===== FIX CRITICAL SCROLLING ===== */
         html {
-            scroll-behavior: smooth !important;
-            -webkit-text-size-adjust: 100% !important;
+            scroll-behavior: smooth;
         }
         
         body {
@@ -20,14 +19,10 @@
             color: #1f2937;
             background: linear-gradient(135deg, #f0f4ff 0%, #e6e9ff 100%);
             margin: 0;
-            padding: 20px 0 40px 0;
-            min-height: 100vh !important;
-            height: auto !important;
-            overflow-x: hidden !important;
-            overflow-y: visible !important;
-            position: relative !important;
-            -webkit-overflow-scrolling: touch !important;
-            touch-action: pan-y !important;
+            padding: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
         
         /* ===== INSTALL BANNER ===== */
@@ -39,18 +34,11 @@
             margin: 1rem;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            position: sticky;
-            top: 10px;
-            z-index: 1000;
         }
 
         .install-banner h3 {
             margin-bottom: 8px;
             font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
         }
 
         .install-btn {
@@ -62,17 +50,12 @@
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
             margin-top: 8px;
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
         .install-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            background: #f3f4f6;
         }
 
         /* ===== HEADER ===== */
@@ -82,36 +65,25 @@
             text-align: center;
             padding: 2rem 1rem;
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            position: relative;
-            overflow: hidden;
             margin-bottom: 1.5rem;
         }
 
         .header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.4rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            letter-spacing: 1.5px;
             font-weight: 800;
-            background: linear-gradient(to right, white, #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .header h2 {
             font-size: 1.5rem;
             font-weight: 400;
             margin-bottom: 1rem;
-            opacity: 0.95;
         }
 
         .header .year {
             font-size: 1.8rem;
             font-weight: 800;
             margin-top: 0.3rem;
-            background: linear-gradient(to right, #fee140, #fa709a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         /* ===== IMPORTANT NOTICE ===== */
@@ -121,7 +93,6 @@
             padding: 1.2rem;
             margin: 1rem;
             border-radius: 0 12px 12px 0;
-            position: relative;
         }
 
         .important-notice h4 {
@@ -143,39 +114,21 @@
             border-radius: 16px;
             padding: 1.5rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-top: 4px solid #6366f1;
-        }
-
-        .platform-card.android {
-            border-top-color: #1e40af;
-        }
-
-        .platform-card.iphone {
-            border-top-color: #0ea5e9;
         }
 
         .platform-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
+            display: inline-block;
             background: #dbeafe;
             color: #1e40af;
             padding: 6px 16px;
             border-radius: 50px;
             font-weight: 700;
             margin-bottom: 1rem;
-            width: fit-content;
-        }
-
-        .platform-card.iphone .platform-badge {
-            background: #dbeafe;
-            color: #0ea5e9;
         }
 
         .step-list {
             list-style: none;
             padding: 0;
-            margin: 0;
         }
 
         .step-item {
@@ -201,11 +154,6 @@
             font-weight: 700;
             font-size: 0.8rem;
             flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .platform-card.iphone .step-number {
-            background: #0ea5e9;
         }
 
         .step-check {
@@ -218,7 +166,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
-            z-index: 999;
+            z-index: 100;
             margin-bottom: 1.5rem;
         }
 
@@ -228,7 +176,6 @@
             gap: 6px;
             padding: 10px;
             scrollbar-width: none;
-            -ms-overflow-style: none;
         }
 
         .nav-tabs::-webkit-scrollbar {
@@ -243,25 +190,21 @@
             cursor: pointer;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
             white-space: nowrap;
             min-width: 110px;
             color: #4338ca;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .nav-btn:hover, .nav-btn.active {
             background: #6366f1;
             color: white;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
         }
 
         /* ===== MAIN CONTENT ===== */
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1rem 40px 1rem;
         }
 
         .content-section {
@@ -271,13 +214,6 @@
             padding: 1.8rem;
             margin-bottom: 2rem;
             display: none;
-            position: relative;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .content-section.active {
@@ -288,23 +224,7 @@
             color: #4f46e5;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            padding-bottom: 0.8rem;
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 12px;
             font-weight: 700;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: #6366f1;
-            border-radius: 2px;
         }
 
         .subsection {
@@ -313,7 +233,6 @@
             background: #f8fafc;
             border-radius: 16px;
             border-left: 4px solid #6366f1;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
         }
 
         .subsection-title {
@@ -321,9 +240,6 @@
             font-size: 1.3rem;
             margin-bottom: 0.8rem;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .subsection-content ul {
@@ -338,7 +254,6 @@
             background: white;
             border-radius: 10px;
             position: relative;
-            font-size: 0.95rem;
         }
 
         .subsection-content li::before {
@@ -355,7 +270,6 @@
         .subsection-content ol {
             padding-left: 2rem;
             margin: 1rem 0;
-            font-size: 0.95rem;
         }
 
         .subsection-content ol li {
@@ -371,16 +285,6 @@
             margin: 1.8rem 0;
             text-align: center;
             border: 2px solid #f59e0b;
-        }
-
-        .bible-verse::before {
-            content: '"';
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            font-size: 4rem;
-            color: rgba(245, 158, 11, 0.3);
-            font-family: Georgia, serif;
         }
 
         .bible-reference {
@@ -407,9 +311,6 @@
             color: #8b5cf6;
             margin-bottom: 0.8rem;
             font-size: 1.15rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         /* ===== FORM STYLES ===== */
@@ -427,19 +328,6 @@
             margin-bottom: 1.8rem;
             text-align: center;
             font-weight: 700;
-            position: relative;
-        }
-
-        .form-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 70px;
-            height: 3px;
-            background: #6366f1;
-            border-radius: 2px;
         }
 
         .form-group {
@@ -452,9 +340,6 @@
             font-weight: 600;
             color: #1f2937;
             font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         .form-control {
@@ -463,7 +348,6 @@
             border: 2px solid #d1d5db;
             border-radius: 12px;
             font-size: 1rem;
-            transition: all 0.3s ease;
             font-family: inherit;
         }
 
@@ -471,7 +355,6 @@
             outline: none;
             border-color: #6366f1;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-            background: #f9fafb;
         }
 
         textarea.form-control {
@@ -496,7 +379,6 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.3s ease;
             border: none;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
@@ -508,8 +390,6 @@
 
         .btn-primary:hover {
             background: #4f46e5;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
         }
 
         .btn-danger {
@@ -519,8 +399,6 @@
 
         .btn-danger:hover {
             background: #dc2626;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
         }
 
         .btn-block {
@@ -546,7 +424,6 @@
 
         .footer p {
             margin-bottom: 0.6rem;
-            opacity: 0.95;
         }
 
         .footer .date {
@@ -560,7 +437,6 @@
             padding-top: 1.2rem;
             border-top: 1px solid rgba(255,255,255,0.2);
             font-size: 0.9rem;
-            opacity: 0.85;
         }
 
         /* ===== HIGHLIGHT EFFECT ===== */
@@ -629,7 +505,7 @@
                 font-size: 0.95rem;
             }
             .container {
-                padding: 0 0.8rem;
+                padding: 0 0.8rem 40px 0.8rem;
             }
             .install-banner {
                 margin: 0.8rem;
@@ -638,26 +514,6 @@
             .important-notice {
                 margin: 1rem 0.8rem;
                 padding: 1.2rem;
-            }
-        }
-
-        /* ===== PRINT STYLES ===== */
-        @media print {
-            .install-banner, .nav-container, .footer, .platform-guide, .important-notice {
-                display: none !important;
-            }
-            body {
-                background: white;
-                padding: 0;
-            }
-            .content-section {
-                display: block !important;
-                box-shadow: none;
-                padding: 1.2rem;
-            }
-            .subsection {
-                background: white;
-                border: 1px solid #ddd;
             }
         }
     </style>
@@ -692,7 +548,7 @@
     <!-- Platform Guide -->
     <div class="platform-guide">
         <!-- Android Card -->
-        <div class="platform-card android">
+        <div class="platform-card">
             <div class="platform-badge">
                 <i class="fab fa-android"></i> ANDROID (Chrome)
             </div>
@@ -721,7 +577,7 @@
         </div>
 
         <!-- iPhone Card -->
-        <div class="platform-card iphone">
+        <div class="platform-card">
             <div class="platform-badge">
                 <i class="fab fa-apple"></i> IPHONE (Safari)
             </div>
@@ -753,40 +609,40 @@
     <!-- Navigation -->
     <div class="nav-container">
         <div class="nav-tabs">
-            <button class="nav-btn active" data-section="pendahuluan">
+            <button class="nav-btn active" onclick="showSection('pendahuluan')">
                 <i class="fas fa-home"></i> Pendahuluan
             </button>
-            <button class="nav-btn" data-section="dasar">
+            <button class="nav-btn" onclick="showSection('dasar')">
                 <i class="fas fa-bible"></i> Dasar
             </button>
-            <button class="nav-btn" data-section="tujuan">
+            <button class="nav-btn" onclick="showSection('tujuan')">
                 <i class="fas fa-bullseye"></i> Tujuan
             </button>
-            <button class="nav-btn" data-section="alasan">
+            <button class="nav-btn" onclick="showSection('alasan')">
                 <i class="fas fa-question"></i> Alasan
             </button>
-            <button class="nav-btn" data-section="struktur">
+            <button class="nav-btn" onclick="showSection('struktur')">
                 <i class="fas fa-sitemap"></i> Struktur
             </button>
-            <button class="nav-btn" data-section="petunjuk">
+            <button class="nav-btn" onclick="showSection('petunjuk')">
                 <i class="fas fa-book"></i> Petunjuk
             </button>
-            <button class="nav-btn" data-section="tata-ibadah">
+            <button class="nav-btn" onclick="showSection('tata-ibadah')">
                 <i class="fas fa-pray"></i> Tata Ibadah
             </button>
-            <button class="nav-btn" data-section="etika">
+            <button class="nav-btn" onclick="showSection('etika')">
                 <i class="fas fa-handshake"></i> Etika
             </button>
-            <button class="nav-btn" data-section="evaluasi">
+            <button class="nav-btn" onclick="showSection('evaluasi')">
                 <i class="fas fa-chart-line"></i> Evaluasi
             </button>
-            <button class="nav-btn" data-section="pengajaran">
+            <button class="nav-btn" onclick="showSection('pengajaran')">
                 <i class="fas fa-chalkboard"></i> Pengajaran
             </button>
-            <button class="nav-btn" data-section="hasil">
+            <button class="nav-btn" onclick="showSection('hasil')">
                 <i class="fas fa-trophy"></i> Hasil
             </button>
-            <button class="nav-btn" data-section="lampiran">
+            <button class="nav-btn" onclick="showSection('lampiran')">
                 <i class="fas fa-file"></i> Lampiran
             </button>
         </div>
@@ -1241,96 +1097,33 @@ Kel. Bp. Siparayakon Sihite"></textarea>
     </footer>
 
     <script>
-        // Navigation functionality - FIXED FOR SCROLLING
-        document.addEventListener('DOMContentLoaded', function() {
-            const navButtons = document.querySelectorAll('.nav-btn');
+        // SIMPLE NAVIGATION FUNCTION - FIXED VERSION
+        function showSection(sectionId) {
+            // Hide all sections
             const sections = document.querySelectorAll('.content-section');
-            
-            navButtons.forEach((button, index) => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Remove active class from all buttons and sections
-                    navButtons.forEach(btn => btn.classList.remove('active'));
-                    sections.forEach(section => section.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Show corresponding section
-                    const sectionId = this.getAttribute('data-section');
-                    document.getElementById(sectionId).classList.add('active');
-                    
-                    // Scroll to top smoothly - FIXED VERSION
-                    setTimeout(() => {
-                        window.scrollTo({
-                            top: 0,
-                            behavior: 'smooth'
-                        });
-                    }, 10);
-                });
+            sections.forEach(section => {
+                section.classList.remove('active');
             });
             
-            // Auto-save form data to localStorage
-            const formInputs = document.querySelectorAll('.form-control');
-            formInputs.forEach(input => {
-                // Load saved data
-                const savedValue = localStorage.getItem(input.id);
-                if (savedValue) {
-                    input.value = savedValue;
-                }
-                
-                // Save on change
-                input.addEventListener('change', function() {
-                    localStorage.setItem(this.id, this.value);
-                });
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active button
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
             });
             
-            // Clear form button
-            const clearBtn = document.createElement('button');
-            clearBtn.textContent = '🗑️ Bersihkan Form';
-            clearBtn.className = 'action-btn btn-danger btn-block';
-            clearBtn.onclick = function() {
-                if (confirm('Apakah Anda yakin ingin menghapus semua data form?')) {
-                    formInputs.forEach(input => {
-                        input.value = '';
-                        localStorage.removeItem(input.id);
-                    });
-                    alert('Form berhasil dibersihkan!');
-                }
-            };
+            // Find and activate the clicked button
+            event.target.closest('.nav-btn').classList.add('active');
             
-            // Add clear button to lampiran section
-            const lampiranSection = document.getElementById('lampiran');
-            if (lampiranSection.querySelector('.form-section')) {
-                lampiranSection.querySelector('.form-section').appendChild(clearBtn);
-            }
-            
-            // Print button
-            const printBtn = document.createElement('button');
-            printBtn.innerHTML = '<i class="fas fa-print"></i> Cetak / PDF';
-            printBtn.className = 'action-btn btn-primary btn-block';
-            printBtn.onclick = function() {
-                if (confirm('Cetak sebagai PDF?')) {
-                    window.print();
-                }
-            };
-            
-            // Add print button to header
-            const header = document.querySelector('.header');
-            const printContainer = document.createElement('div');
-            printContainer.style.cssText = `
-                position: absolute;
-                top: 15px;
-                right: 15px;
-                z-index: 10;
-            `;
-            printContainer.appendChild(printBtn);
-            header.appendChild(printContainer);
-            
-            // CRITICAL FIX: Show install guide
-            window.showInstallGuide = function() {
-                const guide = `
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Show install guide
+        function showInstallGuide() {
+            const guide = `
 📱 CARA MENAMBAHKAN KE LAYAR UTAMA HP:
 
 ANDROID (Chrome):
@@ -1354,14 +1147,61 @@ IPHONE (Safari):
 • Ini adalah batasan keamanan browser
 • Setelah ditambahkan ke home screen, 
   aplikasi bisa dibuka OFFLINE!
-• Untuk pengalaman terbaik:
-  1. Upload file ke Google Drive
-  2. Klik kanan → "Dapatkan link"
-  3. Set "Siapa saja yang memiliki link"
-  4. Buka link di HP
 `;
-                alert(guide);
+            alert(guide);
+        }
+        
+        // Auto-save form data
+        document.addEventListener('DOMContentLoaded', function() {
+            const formInputs = document.querySelectorAll('.form-control');
+            
+            formInputs.forEach(input => {
+                // Load saved data
+                const savedValue = localStorage.getItem(input.id);
+                if (savedValue) {
+                    input.value = savedValue;
+                }
+                
+                // Save on change
+                input.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.value);
+                });
+            });
+            
+            // Clear form button
+            const clearBtn = document.createElement('button');
+            clearBtn.textContent = '🗑️ Bersihkan Form';
+            clearBtn.className = 'action-btn btn-danger btn-block';
+            clearBtn.onclick = function() {
+                if (confirm('Hapus semua data form?')) {
+                    formInputs.forEach(input => {
+                        input.value = '';
+                        localStorage.removeItem(input.id);
+                    });
+                    alert('Form dibersihkan!');
+                }
             };
+            
+            const lampiranSection = document.getElementById('lampiran');
+            if (lampiranSection.querySelector('.form-section')) {
+                lampiranSection.querySelector('.form-section').appendChild(clearBtn);
+            }
+            
+            // Print button
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '<i class="fas fa-print"></i> Cetak / PDF';
+            printBtn.className = 'action-btn btn-primary btn-block';
+            printBtn.onclick = function() {
+                if (confirm('Cetak sebagai PDF?')) {
+                    window.print();
+                }
+            };
+            
+            const header = document.querySelector('.header');
+            const printContainer = document.createElement('div');
+            printContainer.style.cssText = 'position: absolute; top: 15px; right: 15px;';
+            printContainer.appendChild(printBtn);
+            header.appendChild(printContainer);
         });
     </script>
 </body>

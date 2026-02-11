@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buku Saku Partonggoan Parjumatanganan GKPS">
+    <meta name="theme-color" content="#1a3a6c">
+    <title>Buku Saku GKPS</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/manifest+json,{
+        %22name%22:%22Buku%20Saku%20GKPS%22,
+        %22short_name%22:%22GKPS%20Saku%22,
+        %22description%22:%22Buku%20Saku%20Partonggoan%20Parjumatanganan%20di%20GKPS%22,
+        %22start_url%22:%22.%22,
+        %22display%22:%22standalone%22,
+        %22background_color%22:%22%23f5f7fa%22,
+        %22theme_color%22:%22%231a3a6c%22,
+        %22icons%22:[{
+            %22src%22:%22data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20192%20192'%3E%3Ccircle%20cx='96'%20cy='96'%20r='88'%20fill='%231a3a6c'/%3E%3Cpath%20d='M60%20140%20L96%2070%20L132%20140%20Z'%20fill='white'/%3E%3C/svg%3E%22,
+            %22sizes%22:%22192x192%22,
+            %22type%22:%22image/svg+xml%22,
+            %22purpose%22:%22any%20maskable%22
+        },{
+            %22src%22:%22data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3Ccircle%20cx='256'%20cy='256'%20r='240'%20fill='%231a3a6c'/%3E%3Cpath%20d='M160%20360%20L256%20180%20L352%20360%20Z'%20fill='white'/%3E%3C/svg%3E%22,
+            %22sizes%22:%22512x512%22,
+            %22type%22:%22image/svg+xml%22,
+            %22purpose%22:%22any%20maskable%22
+        }]
+    }">
+    
+    <style>
+        :root {
+            --primary-color: #1a3a6c;
+            --secondary-color: #e63946;
+            --accent-color: #2a9d8f;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --gray-color: #6c757d;
+            --border-radius: 10px;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .install-guide {
+            background: linear-gradient(120deg, var(--primary-color), #2c5282);
+            color: white;
+            padding: 1.5rem;
+            margin: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+
+        .install-guide h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .install-steps {
+            background: white;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .step-text {
+            flex: 1;
+        }
+
+        .platform-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+
+        .note-box {
+            background: #fff3cd;
+            border-left: 4px solid var(--warning-color);
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 5px;
+        }
+
+        .note-box strong {
+            color: var(--primary-color);
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(120deg, var(--primary-color), #2c5282);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            background: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs {
+            display: flex;
+            overflow-x: auto;
+            gap: 5px;
+            padding: 10px 10px;
+            scrollbar-width: none;
+        }
+
+        .nav-tabs::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-btn {
+            background: var(--light-color);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            white-space: nowrap;
+            flex-shrink: 0;
+            color: var(--gray-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn.active {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(26,58,108,0.3);
+        }
+
+        /* Main Content Styles */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .subsection {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .subsection-title {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .subsection-content {
+            margin-left: 1rem;
+        }
+
+        .subsection-content p {
+            margin-bottom: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .subsection-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .subsection-content li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .subsection-content li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .subsection-content ol {
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .subsection-content ol li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        /* Bible Verse Styles */
+        .bible-verse {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border-left: 4px solid var(--warning-color);
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .bible-verse::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 3rem;
+            color: var(--warning-color);
+            opacity: 0.3;
+        }
+
+        .bible-reference {
+            display: block;
+            text-align: right;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .card-content {
+            color: var(--gray-color);
+            font-size: 0.95rem;
+        }
+
+        /* Form Styles */
+        .form-section {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .form-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(26,58,108,0.1);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-color), #0d2a52);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .footer .date {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header h2 {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .subsection-title {
+                font-size: 1.1rem;
+            }
+
+            .nav-btn {
+                padding: 10px 15px;
+                font-size: 0.8rem;
+            }
+
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-primary {
+            color: var(--primary-color);
+        }
+
+        .text-secondary {
+            color: var(--secondary-color);
+        }
+
+        .text-accent {
+            color: var(--accent-color);
+        }
+
+        .text-success {
+            color: var(--success-color);
+        }
+
+        .text-warning {
+            color: var(--warning-color);
+        }
+
+        .text-danger {
+            color: var(--danger-color);
+        }
+
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .mt-4 { margin-top: 2rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .badge-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .badge-success {
+            background: var(--success-color);
+            color: white;
+        }
+
+        /* Icons */
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav-container, .footer, .install-guide, .install-steps {
+                display: none;
+            }
+            body {
+                background: white;
+                padding-top: 0;
+            }
+            .content-section {
+                display: block !important;
+                box-shadow: none;
+            }
+        }
+
+        /* Highlight Effect */
+        .highlight {
+            background: linear-gradient(120deg, rgba(42,157,143,0.2), rgba(42,157,143,0));
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Install Guide Section -->
+    <div class="install-guide">
+        <h3>📱 CARA INSTALL APLIKASI INI</h3>
+        <p style="margin-top: 8px; font-size: 0.9rem; opacity: 0.9;">Ikuti panduan di bawah untuk menambahkan ke HP Anda</p>
+    </div>
+
+    <div class="install-steps">
+        <div class="platform-badge">📱 ANDROID (Chrome)</div>
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">Buka halaman ini di <strong>Chrome</strong></div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">Klik menu <strong>⋮ (titik tiga)</strong> di pojok kanan atas</div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">Pilih <strong>"Tambahkan ke Layar utama"</strong></div>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-text">Beri nama: <strong>"Buku Saku GKPS"</strong></div>
+        </div>
+        <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-text">Klik <strong>"Tambah"</strong></div>
+        </div>
+        <div class="step">
+            <div class="step-number">✓</div>
+            <div class="step-text">Aplikasi siap digunakan di <strong>Home Screen</strong> HP Anda!</div>
+        </div>
+    </div>
+
+    <div class="install-steps">
+        <div class="platform-badge">🍎 IPHONE (Safari)</div>
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">Buka halaman ini di <strong>Safari</strong></div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">Klik tombol <strong>📤 (Share)</strong> di bawah</div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">Scroll ke bawah, pilih <strong>"Tambah ke Layar Utama"</strong></div>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-text">Beri nama: <strong>"Buku Saku GKPS"</strong></div>
+        </div>
+        <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-text">Klik <strong>"Tambah"</strong></div>
+        </div>
+        <div class="step">
+            <div class="step-number">✓</div>
+            <div class="step-text">Aplikasi siap digunakan di <strong>Home Screen</strong> iPhone Anda!</div>
+        </div>
+    </div>
+
+    <div class="note-box">
+        <strong>ℹ️ CATATAN:</strong> Jika file dibuka langsung dari komputer/HP (file://), Chrome tidak akan menampilkan opsi "Install". 
+        Untuk fitur lengkap, file perlu di-upload ke hosting online (HTTPS). 
+        Namun cara manual di atas tetap berfungsi untuk menambahkan ke home screen!
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>📖 BUKU SAKU</h1>
+            <h2>PARTONGGOAN PARJUMATANGANAN</h2>
+            <p>DI GEREJA KRISTEN PROTESTAN SIMALUNGUN (GKPS)</p>
+            <p class="mt-1"><strong>2026</strong></p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="nav-container">
+        <div class="nav-tabs">
+            <button class="nav-btn active" data-section="pendahuluan">Pendahuluan</button>
+            <button class="nav-btn" data-section="dasar">Dasar Pelaksanaan</button>
+            <button class="nav-btn" data-section="tujuan">Tujuan</button>
+            <button class="nav-btn" data-section="alasan">Alasan</button>
+            <button class="nav-btn" data-section="struktur">Struktur</button>
+            <button class="nav-btn" data-section="petunjuk">Petunjuk</button>
+            <button class="nav-btn" data-section="tata-ibadah">Tata Ibadah</button>
+            <button class="nav-btn" data-section="etika">Etika</button>
+            <button class="nav-btn" data-section="evaluasi">Evaluasi</button>
+            <button class="nav-btn" data-section="pengajaran">Pengajaran</button>
+            <button class="nav-btn" data-section="hasil">Hasil</button>
+            <button class="nav-btn" data-section="lampiran">Lampiran</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Section A: Pendahuluan -->
+        <section id="pendahuluan" class="content-section active">
+            <h2 class="section-title">A. PENDAHULUAN</h2>
+            
+            <div class="subsection">
+                <p>Ibadah <span class="highlight">Parjuma Tanganan</span> adalah bentuk persekutuan kecil jemaat di rumah-rumah warga jemaat GKPS, yang dilaksanakan untuk:</p>
+                <ul>
+                    <li>Mempererat kasih</li>
+                    <li>Memperdalam firman Tuhan</li>
+                    <li>Menghadirkan kehidupan ibadah dalam keluarga</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <p>Melalui ibadah ini, jemaat:</p>
+                <ul>
+                    <li>Membangun kebersamaan rohani</li>
+                    <li>Saling menguatkan</li>
+                    <li>Menjadi perpanjangan tangan gereja dalam pelayanan kepada keluarga-keluarga secara nyata</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-title">📌 Peran Sintua Parjumatanganan</div>
+                <div class="card-content">
+                    Sesuai dengan Tata Laksana GKPS, Sintua parjumatanganan adalah Sintua yang membimbing atau memimpin Komunitas Jumatanganan. Sintua tersebutlah yang bertanggung jawab atas pembinaan rohani, koordinasi kegiatan, dan pelayanan di kelompok jumatanganan jemaat tersebut dan menjadi perpanjangan tangan gereja dalam pelayanan kepada keluarga.
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B.I: Dasar Pelaksanaan -->
+        <section id="dasar" class="content-section">
+            <h2 class="section-title">B.I. DASAR PELAKSANAAN</h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">Dasar Alkitabiah</div>
+                <div class="subsection-content">
+                    <p>Dalam Alkitab kita dapat menemukan dasar alkitabiah tentang pelayanan parjumatanganan yaitu dalam:</p>
+                    <ul>
+                        <li><strong>a. Matius 18:20</strong></li>
+                        <li><strong>b. Kisah Para Rasul 2:46–47</strong></li>
+                        <li><strong>c. Ibrani 10:24–25</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">Dasar Teologis</div>
+                <div class="subsection-content">
+                    <p>Secara teologis, pelayanan parjumatanganan adalah persekutuan kecil warga jemaat yang mencerminkan tubuh Kristus di mana setiap anggota saling menopang dan bertumbuh dalam kasih.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">Dasar Gerejawi</div>
+                <div class="subsection-content">
+                    <p>Secara aturan gerejawi di GKPS, pelayanan parjumatanganan juga sudah diaturkan dalam:</p>
+                    <ul>
+                        <li>Tata Laksana GKPS</li>
+                        <li>Pedoman Parjumatanganan di GKPS</li>
+                        <li>Hendaknya dituliskan dalam Tata Kerja Majelis Jemaat di masing-masing jemaat</li>
+                    </ul>
+                    <p class="mt-2">Hendaknya juga dalam melaksanakan pelayanan partonggoan parjumatanganan, dituliskan jadwal yang tetap di jemaat dalam pelaksanaan partonggoan parjumatanganan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sections B.II to B.X and Lampiran - Same as previous code -->
+        
+        <!-- Section B.II: Tujuan -->
+        <section id="tujuan" class="content-section">
+            <h2 class="section-title">B.II. TUJUAN PARTONGGOAN JUMATANGANAN</h2>
+            
+            <div class="subsection-content">
+                <ol>
+                    <li>Menumbuhkan iman warga dari setiap keluarga jemaat.</li>
+                    <li>Mempererat kasih antar keluarga.</li>
+                    <li>Menghadirkan suasana ibadah dalam keluarga.</li>
+                    <li>Mendorong keluarga untuk aktif dalam pelayanan.</li>
+                    <li>Menjadi sarana pembinaan dan pelayanan.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section B.III: Alasan -->
+        <section id="alasan" class="content-section">
+            <h2 class="section-title">B.III. ALASAN / MENGAPA DIPERLUKAN PARTONGGOAN JUMATANGANAN</h2>
+            
+            <div class="subsection-content">
+                <ol>
+                    <li>Pelayanan Gereja hadir di tengah keluarga.</li>
+                    <li>Ibadah keluarga memperkuat iman dan kasih.</li>
+                    <li>Menjangkau jemaat yang jarang hadir mengikuti ibadah-ibadah yang dilaksanakan jemaat.</li>
+                    <li>Membangun komunitas keluarga jumatanganan yang saling menopang.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section B.IV: Struktur -->
+        <section id="struktur" class="content-section">
+            <h2 class="section-title">B.IV. STRUKTUR PELAKSANA</h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">1. Pimpinan Majelis Jemaat (PMJ)</div>
+                <div class="subsection-content">
+                    <p>Menetapkan Jadwal Pelaksanaan Partonggoan Parjuma tanganan.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">2. Sintua</div>
+                <div class="subsection-content">
+                    <p>Membina, memimpin, menyiapkan Pelayanan, dan melaporkan pelaksanaan partonggoan parjumatanganan.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">3. Keluarga Tempat Pelaksanaan</div>
+                <div class="subsection-content">
+                    <p>Keluarga tempat pelaksanaan partonggoan parjumatanganan menyediakan tempat dan membantu persiapan.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">4. Pengurus/Koordinator Pelayanan Sektor</div>
+                <div class="subsection-content">
+                    <p>Membagi keluarga di sektornya dengan berkoordinasi dengan Pimpinan Majelis Jemaat kepada kelompok parjumatanganan.</p>
+                    <p class="mt-2"><strong>Yang perlu dipertimbangkan dalam pembagian ini:</strong></p>
+                    <ul>
+                        <li>Jarak tempuh</li>
+                        <li>Wilayah</li>
+                        <li>Pertimbangan Adat/budaya marnasi besan, nasianggi dll bila keluarga yang bersangkutan keberatan</li>
+                    </ul>
+                    <p class="mt-2"><strong>Peran:</strong> Mengawasi jalannya parjuma tanganan.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">5. Pendeta</div>
+                <div class="subsection-content">
+                    <p>Membimbing dan memberi pembekalan Topik yang telah di tetapkan untuk Sintua yang akan melaksanakan Pengajaran.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B.V: Petunjuk -->
+        <section id="petunjuk" class="content-section">
+            <h2 class="section-title">B.V. PETUNJUK PELAKSANAAN</h2>
+            
+            <div class="subsection-content">
+                <ol>
+                    <li>Satu orang Sintua membina <span class="highlight">empat (4) keluarga</span>.</li>
+                    <li>Partonggoan parjumatanganan dilaksanakan paling sedikit <span class="highlight">empat (4) kali setahun</span>.</li>
+                    <li>Diumumkan-diwartakan dalam warta jemaat sebanyak <span class="highlight">dua (2) kali</span> sebelum pelaksanaan.</li>
+                    <li>Diaksanakan secara bergiliran di rumah warga jemaat yang menjadi jumatanganan dari Sintua.</li>
+                    <li>Partonggoan Parjumatanganan <span class="highlight">bukan forum untuk membahas masalah pribadi</span>, tetapi fokus kepada ibadah dan doa.</li>
+                    <li>Setelah selesai pelaksanaan partonggoan parjumatanganan, Sintua wajib membuat laporan kehadiran kepada Pengurus atau koordinator pelayanan Sektor dan Pengurus atau koordinator pelayanan Sektor melaporkannya kepada Pimpinan Majelis Jemaat.</li>
+                    <li>Pelaksanaan pelayanan partonggoan parjumatanganan diumumkan/diwartakan dalam warta jemaat oleh Sintua parjumatanganan, dengan menuliskan jumlah kehadiran dan jumlah Persembahannya.</li>
+                    <li>Durasi ibadah <span class="highlight">60–90 menit</span>.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section B.VI: Tata Ibadah -->
+        <section id="tata-ibadah" class="content-section">
+            <h2 class="section-title">B.VI. TATA IBADAH PARJUMA TANGANAN</h2>
+            
+            <div class="subsection">
+                <p>Adapun usulan konsep untuk Tata Ibadah pelaksanaan partonggoan parjumatanganan adalah:</p>
+            </div>
+
+            <div class="subsection-content">
+                <ol>
+                    <li><strong>Saat Teduh</strong></li>
+                    <li><strong>Votum – Introitus - Doa</strong></li>
+                    <li><strong>Nyanyian</strong></li>
+                    <li><strong>Khotbah (Pengajaran)</strong></li>
+                    <li><strong>Nyanyian</strong></li>
+                    <li><strong>Doa syafaat atau Doa Berantai</strong> (Pokok-Pokok Doa didaftarkan)</li>
+                    <li><strong>Nyanyian (Persembahan)</strong></li>
+                    <li><strong>Doa Persembahan – Doa Bapa Kami – Berkat</strong></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section B.VII: Etika -->
+        <section id="etika" class="content-section">
+            <h2 class="section-title">B.VII. ETIKA IBADAH DAN KOMUNIKASI SINTUA</h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">1. Sikap Ibadah</div>
+                <div class="subsection-content">
+                    <ul>
+                        <li>✓ Datang tepat waktu dan berpakaian sopan.</li>
+                        <li>✓ Menjaga ketenangan dan hormat satu dengan yang lain.</li>
+                        <li>✓ Menjaga suasana rohani, penuh kasih dan damai.</li>
+                        <li>✓ Tidak menggunakan ibadah untuk keluhan pribadi.</li>
+                        <li>✓ Menjaga suasana rohani, penuh kasih dan damai.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">2. Etika Komunikasi</div>
+                <div class="subsection-content">
+                    <ul>
+                        <li>✓ Berbicara dengan lembut dan penuh kasih (<em>Kolose 4:6</em>).</li>
+                        <li>✓ Menjaga kerahasiaan pokok doa jemaat.</li>
+                        <li>✓ Meneladani Kristus dalam tutur kata.</li>
+                        <li>✓ Bijak menggunakan media sosial.</li>
+                        <li>✓ Cepat mendengar, lambat berkata-kata, lambat marah (<em>Yakobus 1:19</em>).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B.VIII: Evaluasi -->
+        <section id="evaluasi" class="content-section">
+            <h2 class="section-title">B.VIII. EVALUASI IBADAH PARJUMA TANGANAN</h2>
+            
+            <div class="subsection-content">
+                <ol>
+                    <li>Evaluasi ibadah parjumatanganan dilaksanakan pada minggu berikutnya setelah pelaksanaan partonggoan parjumatanganan yang dilaksanakan setelah sermon jemaat atau waktu yang ditentukan oleh Pimpinan Majelis Jemaat.</li>
+                    <li><strong>Tujuannya:</strong> Meningkatkan mutu pelayanan dan kebersamaan.</li>
+                    <li>Warga yang butuh Pelayanan pastoral tindak lanjut tidak dibicarakan dalam rapat evaluasi tersebut, akan tetapi hanya dibicarakan dengan Porhanger atau Wakil Porhanger secara tertutup, agar ditindaklanjuti kepada Pendeta, dan atau Penginjil yang ada di Resort tersebut.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section B.IX: Pengajaran -->
+        <section id="pengajaran" class="content-section">
+            <h2 class="section-title">B.IX. SINTUA MENGADAKAN PENGAJARAN</h2>
+            
+            <div class="subsection">
+                <div class="subsection-title">A. Tanggung Jawab Sintua</div>
+                <div class="subsection-content">
+                    <p>Sintua bertanggung jawab melaksanakan pembinaan rohani kepada keluarga binaannya.</p>
+                    
+                    <p class="mt-2"><strong>Tujuan Pengajaran:</strong></p>
+                    <ul>
+                        <li>Memperdalam ajaran iman Kristen.</li>
+                        <li>Membina kehidupan rohani keluarga.</li>
+                        <li>Menanamkan nilai kasih dan pelayanan.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">B. Bentuk Pengajaran</div>
+                <div class="subsection-content">
+                    <ul>
+                        <li>Kunjungan langsung dalam suka maupun duka dan Berdoa bersama.</li>
+                        <li>Diskusi Alkitab dan doa bersama.</li>
+                        <li>Bimbingan rohani bagi keluarga bergumul dan doa bersama.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">C. Materi Pengajaran</div>
+                <div class="subsection-content">
+                    <ul>
+                        <li>Pengajaran tematik dari Alkitab</li>
+                        <li>Tema tahunan gereja</li>
+                        <li>Sub Tema Tahunan</li>
+                        <li>Ajaran GKPS lainnya</li>
+                        <li>Renungan Harian setiap harinya (distribusi)</li>
+                        <li>Disesuaikan dengan Materi dari Kantor Sinode</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <div class="subsection-title">D. Sikap Sintua</div>
+                <div class="subsection-content">
+                    <ul>
+                        <li>Rendah hati</li>
+                        <li>Tidak menggurui</li>
+                        <li>Mudah dimengerti</li>
+                        <li>Menjaga rahasia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section B.X: Hasil -->
+        <section id="hasil" class="content-section">
+            <h2 class="section-title">B.X. HASIL YANG DIHARAPKAN</h2>
+            
+            <div class="subsection-content">
+                <div class="bible-verse">
+                    Keluarga bertumbuh dalam iman dan menjadi saksi Kristus
+                    <span class="bible-reference">1 Timotius 4:12</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section C: Lampiran -->
+        <section id="lampiran" class="content-section">
+            <h2 class="section-title">C. LAMPIRAN - FORMAT LAPORAN SINTUA PARJUMATANGANAN</h2>
+            
+            <div class="form-section">
+                <h3 class="form-title">📋 Format Laporan Sintua Parjumatanganan</h3>
+                
+                <div class="form-group">
+                    <label for="nama">a. Nama</label>
+                    <input type="text" id="nama" class="form-control" placeholder="Contoh: St. Sibujur Uhur Saragih">
+                </div>
+
+                <div class="form-group">
+                    <label for="jumatanganan">b. Jumatanganan (4 Keluarga)</label>
+                    <textarea id="jumatanganan" class="form-control" placeholder="Contoh:
+Kel. Bp. Siboan Damei Purba
+Kel. Bp. Sibasar Damanik
+Kel. Bp. Sirajin Tumang Sinaga
+Kel. Bp. Siparayakon Sihite"></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tanggal">c. Tanggal Pelaksanaan</label>
+                        <input type="date" id="tanggal" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tempat">d. Tempat Rumah</label>
+                        <input type="text" id="tempat" class="form-control" placeholder="Contoh: Kel Bp. Siboan Damei Purba">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="kehadiran">e. Jumlah Keluarga Hadir</label>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Bapa........ halak">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Inang........ halak">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Namaposo..... halak">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Sikolah Minggu halak">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pokok-doa">f. Pokok-pokok Doa</label>
+                    <textarea id="pokok-doa" class="form-control" placeholder="Tuliskan pokok-pokok doa yang didoakan"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="galangan">g. Galangan (Persembahan)</label>
+                    <input type="text" id="galangan" class="form-control" placeholder="Rp.................">
+                </div>
+
+                <div class="form-group">
+                    <label for="tema">h. Tema Renungan</label>
+                    <input type="text" id="tema" class="form-control" placeholder="Contoh: Martangkupas Pasonang Paruhuran, Pasu pasu na gokan dear">
+                </div>
+
+                <div class="form-group">
+                    <label for="catatan">i. Catatan Khusus untuk Tindak Lanjut Pastoral</label>
+                    <textarea id="catatan" class="form-control" placeholder="Contoh: KDRT, Sirang so sirang, Percobaan Bunuh Diri, Aib Berat, Terjerat narkoba, dll"></textarea>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>Buku Saku Partonggoan Parjumatanganan di GKPS</strong></p>
+        <p>Pematangsiantar, Oktober 2025</p>
+        <p class="date">Pimpinan Sinode GKPS</p>
+        <p class="mt-2">© 2026 GKPS - Gereja Kristen Protestan Simalungun</p>
+    </footer>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const sections = document.querySelectorAll('.content-section');
+            
+            navButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and sections
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                    
+                    // Scroll to top smoothly
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Auto-save form data to localStorage
+            const formInputs = document.querySelectorAll('.form-control');
+            formInputs.forEach(input => {
+                // Load saved data
+                const savedValue = localStorage.getItem(input.id);
+                if (savedValue) {
+                    input.value = savedValue;
+                }
+                
+                // Save on change
+                input.addEventListener('change', function() {
+                    localStorage.setItem(this.id, this.value);
+                });
+            });
+            
+            // Clear form button
+            const clearBtn = document.createElement('button');
+            clearBtn.textContent = '🗑️ Bersihkan Form';
+            clearBtn.style.cssText = `
+                background: var(--danger-color);
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                margin: 10px auto;
+                display: block;
+                transition: all 0.3s ease;
+            `;
+            clearBtn.onmouseover = function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 4px 8px rgba(220,53,69,0.3)';
+            };
+            clearBtn.onmouseout = function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = 'none';
+            };
+            clearBtn.onclick = function() {
+                if (confirm('Apakah Anda yakin ingin menghapus semua data form?')) {
+                    formInputs.forEach(input => {
+                        input.value = '';
+                        localStorage.removeItem(input.id);
+                    });
+                    alert('Form berhasil dibersihkan!');
+                }
+            };
+            
+            // Add clear button to lampiran section
+            const lampiranSection = document.getElementById('lampiran');
+            if (lampiranSection.querySelector('.form-section')) {
+                lampiranSection.querySelector('.form-section').appendChild(clearBtn);
+            }
+            
+            // Print functionality
+            const printBtn = document.createElement('button');
+            printBtn.innerHTML = '🖨️ Cetak / PDF';
+            printBtn.style.cssText = `
+                background: var(--success-color);
+                color: white;
+                border: none;
+                padding: 12px 25px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 1rem;
+                margin: 20px auto;
+                display: block;
+                box-shadow: 0 4px 6px rgba(40,167,69,0.3);
+                transition: all 0.3s ease;
+            `;
+            printBtn.onmouseover = function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 6px 12px rgba(40,167,69,0.4)';
+            };
+            printBtn.onmouseout = function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 6px rgba(40,167,69,0.3)';
+            };
+            printBtn.onclick = function() {
+                if (confirm('Apakah Anda ingin mencetak atau menyimpan sebagai PDF?')) {
+                    window.print();
+                }
+            };
+            
+            // Add print button to header
+            const header = document.querySelector('.header');
+            const printContainer = document.createElement('div');
+            printContainer.style.cssText = `
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                z-index: 10;
+            `;
+            printContainer.appendChild(printBtn);
+            header.appendChild(printContainer);
+            
+            // Add swipe functionality for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            }, false);
+            
+            document.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, false);
+            
+            function handleSwipe() {
+                const currentIndex = Array.from(navButtons).findIndex(btn => btn.classList.contains('active'));
+                
+                if (touchEndX < touchStartX && currentIndex < navButtons.length - 1) {
+                    // Swipe left - next section
+                    navButtons[currentIndex + 1].click();
+                }
+                
+                if (touchEndX > touchStartX && currentIndex > 0) {
+                    // Swipe right - previous section
+                    navButtons[currentIndex - 1].click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
